@@ -1,0 +1,390 @@
+/* NO DISTRACTION EDUCATIONAL THEME >
+/* Inspired by the JEKYL blog THEME and the CS50 OPENCOURSEWARE WEBSITE*/
+
+/* WEBSITE STYLING AND COLUMN SPLIT*/
+html,
+body {
+  margin: 0;  
+  padding: 0;
+}
+.bottom_text{
+  bottom:0;
+}
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (min-width: 38em) {
+  html {
+    font-size: 17px;
+  }
+}
+
+body {
+  margin:0;
+  color: #a7a7a7;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  height:100%;
+  background-color: rgb(181, 192, 202);
+}
+
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: fill;
+}
+
+.wrapper {
+  display:flex;
+  position: relative;
+}
+
+.left_column{
+  width:18rem;
+  position: fixed;
+  top:0;
+  left:0;
+  bottom:0;
+  text-align: left;
+  padding: 4rem 1rem;
+  color: rgba(255, 255, 255, 0.795);
+  background-color: #202020;
+  overflow-y: scroll;
+  overflow-x: auto;
+  height:100%;
+}
+
+.left_column a {
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.right_column a {
+  color: rgb(0, 0, 0);
+  padding: 0.5rem;
+  
+}
+
+.right_column {
+  padding: 50px;
+  text-align: left;
+  position: relative;
+  right:0;
+  margin-left: 20rem;
+}
+
+.right_column a {
+  color: #fff;
+}
+
+.collapsible_menu{ 
+  display:none;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
+    
+}
+.reduced_size {
+    max-width: 20%;
+    max-height: 20%;
+    object-fit: fill;
+    color:#a4bbe6;
+}
+
+/* CARDS CUSTOMISATION */
+/* DISPLAY ROW OF CARDS AS FLEXIBLE DECKS */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row > [class*='right_column'] {
+  display: flex;
+  flex-direction: column;
+}
+
+.categories_width{
+  width:20rem;
+}
+
+.subcategories_width{
+  width:16rem;
+}
+
+.series_width{
+  width:32rem;
+}
+
+.card {
+  padding:1rem;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  background-color: #202020;
+  border-radius: 10px;
+  box-shadow: -0.5rem 0 2rem #030303;
+  transition: 0.4s ease-out;
+  position: relative; 
+  left: 0px;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+.card:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+.card_series {
+  padding:1rem;
+  margin: auto;
+  margin-bottom: 25px;
+  background-color: #202020;
+  border-radius: 10px;
+  box-shadow: -0.5rem 0 2rem #030303;
+  transition: 0.4s ease-out;
+  position: relative; 
+  left: 0px;
+  height: 25rem;
+}
+  
+.card_series:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+  
+.card_series:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+
+.card_subcategories {
+  padding:1rem;
+  margin: auto;
+  margin-bottom: 25px;
+  background-color: #202020;
+  border-radius: 10px;
+  box-shadow: -0.5rem 0 2rem #030303;
+  transition: 0.4s ease-out;
+  position: relative; 
+  left: 0px;
+  height: 17rem;
+}
+  
+.card_subcategories:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
+}
+
+
+.card_subcategories:hover ~ .card {
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
+}
+
+/* BUTTON DISPLAY OPTION - CURRENTLY NOT WORKING IN CERTAIN BROWSERS */
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #c28e00;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color: #384485;
+  box-shadow: 0px 15px 20px rgba(24, 20, 87, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+/* MOBILE DISPLAY SETTINGS */
+/* CHANGE FLEXIBLE DISPLAY OF COLUMNS TO BLOCKS, AND HIDE SECTIONS OF THE WEBSITE */
+/* ADD OPTIONS TO ADD A NEW NAVIGATION MENU FOR MOBILE -- CURENTLY UNEXISTANT */
+
+@media only screen and (min-width: 320px) and (max-width:850px){
+
+  .card {
+    left: auto;
+    }
+
+  .row {
+      left:auto;
+      right:auto;
+    }
+
+  .wrapper{
+      display:block;
+  }
+  .right_column{
+      width:100%;
+      box-sizing: border-box;
+      margin-left: 0rem;
+  }
+
+  .left_column{
+      width:100%;
+      box-sizing: border-box;
+      position: relative;
+  }
+
+  .nav_pc{
+      display:none;
+    }
+
+
+}
+
+.collapsible_menu{ 
+  display: block;
+  width: auto;
+  height: 20px; 
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #373844;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.active, .collapsible_menu:hover {
+  background-color: rgb(89, 88, 133);
+}
+
+.common_nav {
+  display:none;
+}
+
+/*JEKYLL THEME */
+/* No `:visited` state is required by default (browsers will use `a`) */
+.title {
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  left: 20px;
+  top: 15px;
+
+}
+
+a {
+  color: #ccd0d3;
+  text-decoration: none;
+}
+a strong {
+  color: inherit;
+}
+/* `:focus` is linked to `:hover` for basic accessibility */
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: bold;
+  line-height: 1.25;
+  color: #000000;
+  text-rendering: optimizeLegibility;
+}
+h1 {
+  font-size: 2rem;
+  color:#000000;
+}
+h2 {
+  margin-top: auto;
+  font-size: 1.5rem;
+  color:#000000;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  color:#a4bbe6;
+}
+h4, h5, h6 {
+  font-size: 1rem;
+  color:#a4bbe6;
+}
+
+/* Body text */
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  
+}
+
+
+.descriptive {
+  font-size: 1rem;
+  color:#a4bbe6;
+}
+
+/* Lists */
+ul, ol, dl {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-bottom: .5rem;
+}
+
+/* Misc */
+hr {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 0;
+  border-top: 1px solid rgb(173, 165, 165);
+  border-bottom: 1px solid rgb(158, 156, 156);
+}
+
+abbr {
+  font-size: 85%;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+}
+abbr[title] {
+  cursor: help;
+  border-bottom: 1px dotted #e5e5e5;
+}

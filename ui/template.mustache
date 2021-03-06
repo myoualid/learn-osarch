@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>OpenEducation</title>
+    <link rel="stylesheet" href="{{baseurl}}style/nodistraction.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="left_column">
+            <div class="sidebar-about">
+                <h1><a href="/index.php">OSEducation</a></h1>
+                <h2><a>AEC Edition</a></h2>
+                <p class="lead">A platform designed to help you develop digital skills. At your own pace.</p>
+            </div>
+            <!-- IF THE SESSION OCCURS IN mobile screens, THE DIVIDER NAV_PC WILL HIDE // check CSS code for reference-->
+            <!-- href links need to be modified depending on the folder name //server used-->
+            <nav class="nav_pc" >
+                <hr>
+                <a href="{{baseurl}}">Homepage</a><br>    
+                <a href="{{baseurl}}paths">Learning Paths</a><br>
+                <a href="{{baseurl}}about">About</a><br>
+                <hr>
+            </nav>
+            <!-- DISPLAY NAVIGATION BUTTON FOR MOBILE* -->
+            <!--button class="button_mobile">Menu</button-->
+            <nav class="nav_pc">
+                {{#categories}}
+                <a class="lead">{{name}}</a><br />
+                {{#is_active_category}}
+                <ul>
+                    {{#subcategories}}
+                    <li><a href="#">{{name}}</a></li>
+                    {{/subcategories}}
+                </ul>
+                {{/is_active_category}}
+                {{/categories}}
+                <hr>
+                <br>    
+                <span>Currently Alpha Version</span>
+                <p>&copy; 2020. Open education.</p>
+                <p><a href="https://theboson.app">Boson Apps</a><br>
+                <a href="mailto:contact@theboson.app">contact@theboson.app</a><br>
+                <hr>
+                <br>
+            </nav>
+        </div>
+        <div class="right_column">
+            {{{content}}}
+        </div>
+    </div>
+</body>
+</html>

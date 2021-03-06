@@ -1,0 +1,21 @@
+<div class="post">
+    <h2 class="post-title">Introducing OpenSourceEducation</h2>
+    <h3>Chose a section below and sharpen your skills thanks to leading professionals in their fields.</h3>
+    <p>
+        All Rights belong to their owners. Please support the content creators listed in this webapp on their Youtube Channels.
+    </p>
+</div>
+<hr>
+<div class="row">
+    {{#categories}}
+    <div class="card shadow-sm"> 
+        <div class="categories_width">
+            <div class="card-body">
+                <img src="{{icon}}" alt="Italian Trulli">
+                <p>{{id}}</p>
+                <p class="title"><b><a href="{{baseurl}}categories/{{id}}">{{name}}</a></b></p>
+            </div>
+        </div>
+    </div>
+    {{/categories}}
+</div>
