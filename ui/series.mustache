@@ -1,0 +1,21 @@
+<div class="post">
+    <h2 class='title'>Current series:{{series_name}}</h2>
+    <p><a href="{{channel_link}}" target="_blank">{{author_name}}</a></p>
+    <hr>
+    <h2 class="">Remember - practice is key. </h2>
+</div>
+<hr>
+<div class="row">
+    {{#episodes}}
+    <div class="series_width">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{episode_link}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p><a href="https://{{channel_link}}" target="_blank">{{author_name}}</a></p>
+                <br>
+                <p color='white'><b>{{episode_title}}</b></p>
+            </div>
+        </div>
+    </div>
+    {{/episodes}}
+</div>
