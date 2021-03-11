@@ -6,109 +6,65 @@ include '../vendor/autoload.php';
 \DB::$password = '';
 \DB::$dbName = 'learnosarch';
 
+class Page {
+    protected $renderer;
+
+    public function __construct() {
+        $this->renderer = new Mustache_Engine(['entity_flags' => ENT_QUOTES]);
+        $this->baseurl = 'http://localhost:8008/';
+
+        $categories = [];
+        $results = \DB::query('SELECT c.id as category_id, c.category_name,
+          c.description as category_description, category_icon, sc.id as subcategory_id,
+          sc.subcategory_name, sc.subcategory_description as subcategory_description,
+          sc.subcategory_icon FROM `categories` AS `c` LEFT JOIN `subcategories` AS `sc` ON `sc`.`category_id`=`c`.`id`');
+        foreach ($results as $row) {
+            if ( ! array_key_exists($row['category_id'], $categories)) {
+                $categories[$row['category_id']] = [
+                    'id' => $row['category_id'],
+                    'name' => $row['category_name'],
+                    'icon' => $row['category_icon'],
+                    'subcategories' => []
+                ];
+            }
+            $categories[$row['category_id']]['subcategories'][] = [
+                'id' => $row['subcategory_id'],
+                'name' => $row['subcategory_name'],
+                'icon' => $row['subcategory_icon'],
+                'description' => $row['subcategory_description'],
+            ];
+        }
+        $this->categories = $categories;
+    }
+
+    public function render($template, $data) {
+        echo $this->renderer->render(file_get_contents('../ui/template.mustache'), [
+            'baseurl' => $this->baseurl,
+            'content' => $this->renderer->render(file_get_contents($template), $data),
+            'categories' => array_values($this->categories)
+        ]);
+    }
+}
+
 $klein = new \Klein\Klein();
 
 $klein->respond('GET', '/', function () {
-    $baseurl = 'http://localhost:8008/';
-    $categories = [];
-    $results = \DB::query('SELECT c.id as category_id, c.category_name,
-      c.description as category_description, category_icon, sc.id as subcategory_id,
-      sc.subcategory_name, sc.subcategory_description as subcategory_description,
-      sc.subcategory_icon FROM `categories` AS `c` LEFT JOIN `subcategories` AS `sc` ON `sc`.`category_id`=`c`.`id`');
-    foreach ($results as $row) {
-        if ( ! array_key_exists($row['category_id'], $categories)) {
-            $categories[$row['category_id']] = [
-                'id' => $row['category_id'],
-                'name' => $row['category_name'],
-                'icon' => $row['category_icon'],
-                'subcategories' => []
-            ];
-        }
-        $categories[$row['category_id']]['subcategories'][] = [
-            'id' => $row['subcategory_id'],
-            'name' => $row['subcategory_name'],
-            'icon' => $row['subcategory_icon'],
-            'description' => $row['subcategory_description'],
-        ];
-    }
-    $categories = array_values($categories);
-
-    $m = new Mustache_Engine(['entity_flags' => ENT_QUOTES]);
-    $content = $m->render(file_get_contents('../ui/index.mustache'), [
-        'categories' => $categories
-    ]);
-    $template = file_get_contents('../ui/template.mustache');
-    echo $m->render($template, [
-        'baseurl' => $baseurl,
-        'content' => $content,
-        'categories' => $categories
-    ]);
+    $page = new Page();
+    $page->render('../ui/index.mustache', ['categories' => array_values($page->categories)]);
 });
 
 $klein->respond('GET', '/categories/[i:id]', function ($request) {
-    $baseurl = 'http://localhost:8008/';
-    $categories = [];
-    $results = \DB::query('SELECT c.id as category_id, c.category_name,
-      c.description as category_description, category_icon, sc.id as subcategory_id,
-      sc.subcategory_name, sc.subcategory_description as subcategory_description,
-      sc.subcategory_icon FROM `categories` AS `c` LEFT JOIN `subcategories` AS `sc` ON `sc`.`category_id`=`c`.`id`');
-    foreach ($results as $row) {
-        if ( ! array_key_exists($row['category_id'], $categories)) {
-            $categories[$row['category_id']] = [
-                'id' => $row['category_id'],
-                'name' => $row['category_name'],
-                'icon' => $row['category_icon'],
-                'subcategories' => []
-            ];
-        }
-        $categories[$row['category_id']]['subcategories'][] = [
-            'id' => $row['subcategory_id'],
-            'name' => $row['subcategory_name'],
-            'icon' => $row['subcategory_icon'],
-            'description' => $row['subcategory_description'],
-        ];
-    }
-
-    $category = $categories[$request->param('id')];
-
-    $m = new Mustache_Engine(['entity_flags' => ENT_QUOTES]);
-    $content = $m->render(file_get_contents('../ui/category.mustache'), [
+    $page = new Page();
+    $category = $page->categories[$request->param('id')];
+    $page->categories[$request->param('id')]['is_active_category'] = TRUE;
+    $page->render('../ui/category.mustache', [
         'name' => $category['name'],
         'subcategories' => $category['subcategories']
-    ]);
-
-    $categories = array_values($categories);
-    $template = file_get_contents('../ui/template.mustache');
-    echo $m->render($template, [
-        'baseurl' => $baseurl,
-        'content' => $content,
-        'categories' => $categories
     ]);
 });
 
 $klein->respond('GET', '/subcategories/[i:id]', function ($request) {
-    $baseurl = 'http://localhost:8008/';
-    $categories = [];
-
-    $results = \DB::query('SELECT c.id as category_id, c.category_name, c.description as category_description, category_icon, sc.id as subcategory_id, sc.subcategory_name, sc.subcategory_description as subcategory_description, sc.subcategory_icon FROM `categories` AS `c` LEFT JOIN `subcategories` AS `sc` ON `sc`.`category_id`=`c`.`id`');
-    foreach ($results as $row) {
-        if ( ! array_key_exists($row['category_id'], $categories)) {
-            $categories[$row['category_id']] = [
-                'id' => $row['category_id'],
-                'name' => $row['category_name'],
-                'icon' => $row['category_icon'],
-                'subcategories' => []
-            ];
-        }
-        $categories[$row['category_id']]['subcategories'][] = [
-            'id' => $row['subcategory_id'],
-            'name' => $row['subcategory_name'],
-            'icon' => $row['subcategory_icon'],
-            'description' => $row['subcategory_description'],
-            'series' => [],
-        ];
-    };
-
+    $page = new Page();
     $user_request = ($request->param('id'));
 
     $results = \DB::query("SELECT c.id as category_id, category_name, c.description as category_description, category_icon,
@@ -130,43 +86,15 @@ $klein->respond('GET', '/subcategories/[i:id]', function ($request) {
     };
 
     $series = array_values($series);
-
-    $m = new Mustache_Engine(['entity_flags' => ENT_QUOTES]);
-    $content = $m->render(file_get_contents('../ui/subcategory.mustache'), [
+    $page->render('../ui/subcategory.mustache', [
         'subcategory_name' => $series[0]['subcategory_name'],
         'series' => $series,
-    ]);
-
-    $categories = array_values($categories);
-    $template = file_get_contents('../ui/template.mustache');
-    echo $m->render($template, [
-        'baseurl' => $baseurl,
-        'content' => $content,
-        'categories' => $categories
     ]);
 });
 
 
 $klein->respond('GET', '/series/[i:id]', function ($request) {
-    $baseurl = 'http://localhost:8008/';
-    $categories = [];
-    $results = \DB::query('SELECT c.id as category_id, c.category_name, c.description as category_description, category_icon, sc.id as subcategory_id, sc.subcategory_name, sc.subcategory_description as subcategory_description, sc.subcategory_icon FROM `categories` AS `c` LEFT JOIN `subcategories` AS `sc` ON `sc`.`category_id`=`c`.`id`');
-    foreach ($results as $row) {
-        if ( ! array_key_exists($row['category_id'], $categories)) {
-            $categories[$row['category_id']] = [
-                'id' => $row['category_id'],
-                'name' => $row['category_name'],
-                'icon' => $row['category_icon'],
-                'subcategories' => []
-            ];
-        }
-        $categories[$row['category_id']]['subcategories'][] = [
-            'id' => $row['subcategory_id'],
-            'name' => $row['subcategory_name'],
-            'icon' => $row['subcategory_icon'],
-            'description' => $row['subcategory_description'],
-        ];
-    };
+    $page = new Page();
 
     $user_request = ($request->param('id'));
 
@@ -190,21 +118,11 @@ $klein->respond('GET', '/series/[i:id]', function ($request) {
 
     $episodes = array_values($episodes);
 
-    $m = new Mustache_Engine(['entity_flags' => ENT_QUOTES]);
-    $content = $m->render(file_get_contents('../ui/series.mustache'), [
+    $page->render('../ui/series.mustache', [
         'series_name' => $episodes[0]['series_name'],
         'author_name' => $episodes[0]['author_name'],
         'channel_link' => $episodes[0]['channel_link'],
         'episodes' => $episodes,
-        'show' => print_r($user_request),
-    ]);
-
-    $categories = array_values($categories);
-    $template = file_get_contents('../ui/template.mustache');
-    echo $m->render($template, [
-        'baseurl' => $baseurl,
-        'content' => $content,
-        'categories' => $categories
     ]);
 });
 
