@@ -11,7 +11,7 @@
     <div class="wrapper">
         <div class="left_column">
             <div class="sidebar-about">
-                <h1><a href="/index.php">OSEducation</a></h1>
+                <h1><a href="{{baseurl}}">OSEducation</a></h1>
                 <h2><a>AEC Edition</a></h2>
                 <p class="lead">A platform designed to help you develop digital skills. At your own pace.</p>
             </div>
@@ -19,26 +19,25 @@
             <!-- href links need to be modified depending on the folder name //server used-->
             <nav class="nav_pc" >
                 <hr>
-                <a href="{{baseurl}}">Homepage</a><br>    
-                <a href="{{baseurl}}paths">Learning Paths</a><br>
-                <a href="{{baseurl}}about">About</a><br>
+                <button class=button><a href="{{baseurl}}"> Homepage </a></button>
                 <hr>
             </nav>
             <!-- DISPLAY NAVIGATION BUTTON FOR MOBILE* -->
             <!--button class="button_mobile">Menu</button-->
             <nav class="nav_pc">
                 {{#categories}}
-                <a class="lead">{{name}}</a><br />
+                <a class="lead" href="{{baseurl}}categories/{{id}}">{{name}}</a>
                 {{#is_active_category}}
                 <ul>
                     {{#subcategories}}
-                    <li><a href="#">{{name}}</a></li>
+                    <li><a href="{{baseurl}}subcategories/{{id}}">{{name}}</a></li>
                     {{/subcategories}}
                 </ul>
                 {{/is_active_category}}
+                <br>
                 {{/categories}}
                 <hr>
-                <br>    
+                <br>
                 <span>Currently Alpha Version</span>
                 <p>&copy; 2020. Open education.</p>
                 <p><a href="https://theboson.app">Boson Apps</a><br>

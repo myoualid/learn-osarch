@@ -39,6 +39,16 @@ img {
   object-fit: fill;
 }
 
+.center_content {
+  text-align: center;
+}
+
+.bottom_append {
+  bottom: 10px;
+  right: 10px;
+  position: absolute;
+}
+
 .wrapper {
   display:flex;
   position: relative;
@@ -92,6 +102,19 @@ img {
     object-fit: fill;
     
 }
+
+.img_fit {
+  width: 20rem;
+  height: 13rem;
+  object-fit: fill;
+  
+}
+
+.crop_circle_img {
+  object-fit:cover;
+  border-radius:50%;
+}
+
 .reduced_size {
     max-width: 20%;
     max-height: 20%;
@@ -118,7 +141,7 @@ img {
   width:16rem;
 }
 
-.series_width{
+.episode_width{
   width:32rem;
 }
 
@@ -133,6 +156,7 @@ img {
   transition: 0.4s ease-out;
   position: relative; 
   left: 0px;
+  text-align: justify;
 }
 
 .card:hover {
@@ -156,7 +180,7 @@ img {
   transition: 0.4s ease-out;
   position: relative; 
   left: 0px;
-  height: 25rem;
+  height: 30rem;
 }
   
 .card_series:hover {
@@ -169,8 +193,6 @@ img {
   left: 50px;
   transition: 0.4s ease-out;
 }
-
-
 .card_subcategories {
   padding:1rem;
   margin: auto;
@@ -198,7 +220,6 @@ img {
 
 /* BUTTON DISPLAY OPTION - CURRENTLY NOT WORKING IN CERTAIN BROWSERS */
 .button {
-  width: 140px;
   height: 45px;
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
@@ -334,7 +355,7 @@ h3 {
 }
 h4, h5, h6 {
   font-size: 1rem;
-  color:#a4bbe6;
+  color:#6b6b6b;
 }
 
 /* Body text */

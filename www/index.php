@@ -66,44 +66,47 @@ $klein->respond('GET', '/categories/[i:id]', function ($request) {
 $klein->respond('GET', '/subcategories/[i:id]', function ($request) {
     $page = new Page();
     $user_request = ($request->param('id'));
-
     $results = \DB::query("SELECT c.id as category_id, category_name, c.description as category_description, category_icon,
       sc.id as subcategory_id, subcategory_name, subcategory_description, subcategory_icon,
       a.author_name as author_name, a.img_link as img_link, s.id as series_id, series_name, series_link, series_description
       FROM `categories` AS `c` LEFT JOIN (`subcategories` AS `sc`, `authors` AS `a`, `series` AS `s`)
       ON (`sc`.`category_id`=`c`.`id` AND `s`.`subcategory_id`=`sc`.`id` AND `s`.`author_id`=`a`.`id`) WHERE subcategory_id = '$user_request' ");
-
     $series = [];
     foreach ($results as $row) {
         $series[$row['series_id']] = [
-            'id' => $row['series_id'],
             'subcategory_name' => $row['subcategory_name'],
+            'category_id' => $row['category_id'],
+            'category_name' => $row['category_name'],
+            'id' => $row['series_id'],
             'series_name' => $row['series_name'],
             'description' => $row['series_description'],
             'author_name' => $row['author_name'],
             'icon' => $row['img_link'],
         ];
     };
-
     $series = array_values($series);
-    $page->render('../ui/subcategory.mustache', [
-        'subcategory_name' => $series[0]['subcategory_name'],
-        'series' => $series,
-    ]);
+    if ( !empty($series) ) {
+        $category = $page->categories[$series[0]['category_id']];
+        $page->categories[$series[0]['category_id']]['is_active_category'] = TRUE;
+        $page->render('../ui/subcategory.mustache', [
+            'subcategory_name' => $series[0]['subcategory_name'],
+            'category_name' => $series[0]['category_name'],
+            'category_id' => $series[0]['category_id'],
+            'series' => $series,
+        ]);
+    } else {
+        $page->render('../ui/no_content.mustache', []);
+    }
 });
-
 
 $klein->respond('GET', '/series/[i:id]', function ($request) {
     $page = new Page();
-
     $user_request = ($request->param('id'));
-
     $results = \DB::query("SELECT c.id as category_id, category_name, c.description as category_description, category_icon,
       sc.id as subcategory_id, subcategory_name, subcategory_description, subcategory_icon,
       a.author_name as author_name, a.img_link as img_link, channel_link, s.id as series_id, series_name, series_link, series_description, e.id as episode_id, episode_link, episode_title
       FROM `categories` AS `c` LEFT JOIN (`subcategories` AS `sc`, `authors` AS `a`, `series` AS `s`, `episodes` as `e`)
       ON (`sc`.`category_id`=`c`.`id` AND `s`.`subcategory_id`=`sc`.`id` AND `s`.`author_id`=`a`.`id` AND `e`.`series_id`=`s`.`id`) WHERE series_id = '$user_request' ");
-
     $episodes = [];
     foreach ($results as $row) {
         $episodes[$row['episode_id']] = [
@@ -113,14 +116,23 @@ $klein->respond('GET', '/series/[i:id]', function ($request) {
             'author_name' => $row['author_name'],
             'channel_link' => $row['channel_link'],
             'episode_link' => $row['episode_link'],
+            'subcategory_id' => $row['subcategory_id'],
+            'subcategory_name' => $row['subcategory_name'],
+            'category_id' => $row['category_id'],
+            'category_name' => $row['category_name'],
+            'icon' => $row['img_link'],
         ];
     };
-
+    
     $episodes = array_values($episodes);
-
+    $category = $page->categories[$episodes[0]['category_id']];
+    $page->categories[$episodes[0]['category_id']]['is_active_category'] = TRUE;
     $page->render('../ui/series.mustache', [
+        'subcategory_id' => $episodes[0]['subcategory_id'],
+        'subcategory_name' => $episodes[0]['subcategory_name'],
         'series_name' => $episodes[0]['series_name'],
         'author_name' => $episodes[0]['author_name'],
+        'icon' => $episodes[0]['icon'],
         'channel_link' => $episodes[0]['channel_link'],
         'episodes' => $episodes,
     ]);

@@ -1,4 +1,5 @@
 <div class="post">
+    <button class=button><a href="/"> Back to Categories </a></button>
     <h2 class='title'>Current category: {{name}}</h2>
     <hr>
     <h2 class="post-title">Chose a sub-category below</h2>
@@ -6,16 +7,18 @@
 <hr>
 <div class="row">
     {{#subcategories}}
-    <div class="categories_width">
-        <div class="card_series shadow-sm">
-            <div class="card_series-body">
-                <div class="flex_it">
-                    <img class="reduced_size" src="{{icon}}" alt="{{name}}">
-                    <h3><b><a href='{{baseurl}}/subcategories/{{id}}'>{{name}}</a></b></h3>
-                </div>
-                <hr>
+    <div class="card">
+        <div class="categories_width">
+            <div class="center_content">
+                <img class="reduced_size center_content" src="{{icon}}" alt="{{name}}">
+                <h3><b><a href='{{baseurl}}/subcategories/{{id}}'>{{name}}</a></b></h3>
             </div>
+            
+            <hr>
             <h6 class='descriptive'>{{description}}</h6>
+            <br>
+            <br>
+                <button class="button bottom_append"><a href="{{baseurl}}/subcategories/{{id}}"> Go </a></button>            
         </div>
     </div>
     {{/subcategories}}

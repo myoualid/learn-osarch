@@ -1,27 +1,25 @@
 <div class="post">
-    <h2 class='title'>Current section: {{show}} {{subcategory_name}}</h2>
+    <button class=button><a href="{{baseurl}}/categories/{{category_id}}"> Back to {{category_name}} </a></button>
+    <h2 class='title'>Current section: {{subcategory_name}}</h2>
     <hr>
     <h2 class="">Chose a video Series from below and start practicing! </h2>
 </div>
 <hr>
 <div class="row">
     {{#series}}
-    <div class="subcategories_width">
-        <div class="card_series shadow-sm">
-            <div class="card_series_body">
-                <div class="card_series_top">
-                    <img src="{{icon}}" alt="{{author_name}}">
-                    <p class='title'>{{author_name}}</p>
-                    <h6><a href='{{baseurl}}/series/{{id}}'>{{series_name}}</a></h6>
-                    <hr>
-                    <p class="card_series-text">{{description}}</p>
-                </div>
-                <div class="card_series_bottom">
-                    <p class="bottom_text">
-                        <a href='{{baseurl}}/series/{{id}}' class="card-link">Watch all episodes</a>
-                    </p>
-                </div>
+    <div class="card">
+        <div class="categories_width">
+            <div class="center_content">
+                <img class= "crop_circle_img" src="{{icon}}" alt="{{author_name}}">
+                <p class='title'>{{author_name}}</p>
+                <h6><a href='{{baseurl}}/series/{{id}}'>{{series_name}}</a></h6>
+                <hr>
             </div>
+            
+            <p class="card_series_text">{{description}}</p>
+            <br>
+            <br>
+            <button class="button bottom_append"><a href="{{baseurl}}/series/{{id}}"> Go </a></button>
         </div>
     </div>
     {{/series}}
