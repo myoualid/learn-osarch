@@ -12,7 +12,7 @@ body {
 }
 
 html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans",sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -24,6 +24,7 @@ html {
 }
 
 body {
+  font-family: "Open Sans",sans-serif;
   margin:0;
   color: #a7a7a7;
   -webkit-text-size-adjust: 100%;
@@ -49,6 +50,7 @@ img {
   position: absolute;
 }
 
+
 .wrapper {
   display:flex;
   position: relative;
@@ -70,7 +72,7 @@ img {
 }
 
 .left_column a {
-  color: #fff;
+  color:#fff;
   padding: 0.5rem;
 }
 
@@ -332,8 +334,11 @@ a:focus {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
-  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.6rem;
+  line-height: 100%;
+  color: #fff;
+  font-weight: 600;
   line-height: 1.25;
   color: #000000;
   text-rendering: optimizeLegibility;
@@ -348,14 +353,15 @@ h2 {
   color:#000000;
 }
 
-h3 {
+h3, h5 {
   margin-top: 1.5rem;
   font-size: 1.25rem;
-  color:#a4bbe6;
+  color:#000000;
 }
-h4, h5, h6 {
+
+h4, h6 {
   font-size: 1rem;
-  color:#6b6b6b;
+  color:#fff;
 }
 
 /* Body text */
@@ -368,13 +374,13 @@ p {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
-  
+  text-align: justify;
 }
 
 
 .descriptive {
   font-size: 1rem;
-  color:#a4bbe6;
+  color:#c0d0ee;
 }
 
 /* Lists */

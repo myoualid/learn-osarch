@@ -1,15 +1,14 @@
 <div class="post">
-    <h1 class="post-title">Introducing OpenSourceEducation</h2>
-    <h2>Chose a section below and sharpen your skills thanks to leading professionals in their fields.</h2>
-    <h5>All Rights belong to their owners. Please support the content creators listed in this webapp on their Youtube Channels.</h5>
+    <h1> An OpenCoursWare Database : Chose the relevant section below to find tutorials for Free/Libre Software.</h1>
+    <h2>All Rights belong to their owners. Please support the content creators through information on their respective Youtube Channels.</h2>
 </div>
 <hr>
 <div class="row">
     {{#categories}}
     <div class="card">
         <div class="categories_width">
-                <img class="img_fit" src="{{icon}}" alt="{{name}}">
-                <h4><b><a href="{{baseurl}}categories/{{id}}">{{id}}: {{name}}</a></b></h4>
+                <img class="img_fit" src="{{baseurl}}/assets/img/{{icon}}" alt="{{name}}">
+                <h4><b><a href="{{baseurl}}categories/{{id}}">{{id}} - {{name}}</a></b></h4>
         </div>
     </div>
     {{/categories}}

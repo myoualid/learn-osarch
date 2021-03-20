@@ -4,48 +4,46 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <title>OpenEducation</title>
+    <title>learn.OSARCH</title>
     <link rel="stylesheet" href="{{baseurl}}style/nodistraction.css">
 </head>
 <body>
     <div class="wrapper">
         <div class="left_column">
             <div class="sidebar-about">
-                <h1><a href="{{baseurl}}">OSEducation</a></h1>
-                <h2><a>AEC Edition</a></h2>
-                <p class="lead">A platform designed to help you develop digital skills. At your own pace.</p>
+                <h1><a href="{{baseurl}}">learn.OSARCH</a></h1>
+                <h4>A database of free courses and openBIM workflows for AEC professionals.</h4>
             </div>
-            <!-- IF THE SESSION OCCURS IN mobile screens, THE DIVIDER NAV_PC WILL HIDE // check CSS code for reference-->
-            <!-- href links need to be modified depending on the folder name //server used-->
-            <nav class="nav_pc" >
+            <nav class="nav_pc">
                 <hr>
                 <button class=button><a href="{{baseurl}}"> Homepage </a></button>
                 <hr>
             </nav>
-            <!-- DISPLAY NAVIGATION BUTTON FOR MOBILE* -->
-            <!--button class="button_mobile">Menu</button-->
             <nav class="nav_pc">
-                {{#categories}}
-                <a class="lead" href="{{baseurl}}categories/{{id}}">{{name}}</a>
-                {{#is_active_category}}
-                <ul>
-                    {{#subcategories}}
-                    <li><a href="{{baseurl}}subcategories/{{id}}">{{name}}</a></li>
-                    {{/subcategories}}
-                </ul>
-                {{/is_active_category}}
-                <br>
-                {{/categories}}
+                <ol>
+                    {{#categories}}
+                    <li><a class="lead" href="{{baseurl}}categories/{{id}}">{{name}}</a></li>
+                    {{#is_active_category}}
+                    <ul>
+                        {{#subcategories}}
+                        <li><a href="{{baseurl}}subcategories/{{id}}">{{name}}</a></li>
+                        {{/subcategories}}
+                    </ul>
+                    {{/is_active_category}}
+                    <br>
+                    {{/categories}}
+                </ol>
+                <hr>
+                <p>AEC Free Software Directory</p>
                 <hr>
                 <br>
-                <span>Currently Alpha Version</span>
-                <p>&copy; 2020. Open education.</p>
-                <p><a href="https://theboson.app">Boson Apps</a><br>
-                <a href="mailto:contact@theboson.app">contact@theboson.app</a><br>
-                <hr>
                 <br>
             </nav>
         </div>
+        <br>
+        <hr>
+        <br>
+        <hr>
         <div class="right_column">
             {{{content}}}
         </div>

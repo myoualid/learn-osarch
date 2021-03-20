@@ -1,20 +1,17 @@
 <div class="post">
     <button class=button><a href="{{baseurl}}/subcategories/{{subcategory_id}}"> Back to {{subcategory_name}} </a></button>
-    <h2 class='title'>Current series:{{series_name}}</h2>
-    <img class= "crop_circle_img" src="{{icon}}" alt="{{author_name}}">
-    <p><a href="{{channel_link}}" target="_blank">{{author_name}}</a></p>
     <hr>
-    <h2 class="">Remember - practice is key. </h2>
+    <h2>Course: {{series_name}}</h2>
+    <img class= "crop_circle_img" src="{{icon}}" alt="{{author_name}}">
+    <p class='descriptive'><a href="{{channel_link}}" target="_blank">{{author_name}}</a></p>
 </div>
-<hr>
 <div class="row">
     {{#episodes}}
     <div class="episode_width">
         <div class="card">
             <iframe width="100%" height="315" src="https://www.youtube.com/embed/{{episode_link}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <p><a href="{{channel_link}}" target="_blank">{{series_name}}</a></p>
             <hr>
-            <p><b>{{episode_name}}</b></p>
+            <h4><b>{{episode_name}}</b></h4>
         </div>
     </div>
     {{/episodes}}

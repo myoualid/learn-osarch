@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 15, 2021 at 03:24 AM
+-- Generation Time: Mar 20, 2021 at 09:50 PM
 -- Server version: 8.0.23
 -- PHP Version: 7.4.16
 
@@ -94,7 +94,8 @@ INSERT INTO `authors` (`id`, `author_name`, `img_link`, `channel_link`) VALUES
 (53, 'OSArch', 'https://yt3.ggpht.com/ytc/AAUvwnge5kVteR1kbw-7Bk_z8m1OkAB9cHkKvNZ62-T3=s88-c-k-c0x00ffffff-no-rj', 'https://www.youtube.com/channel/UCoP6n8DdDajAM8YYDdFpQMQ'),
 (54, 'Jimmy Gunawan', 'https://yt3.ggpht.com/ytc/AAUvwnimQzzb688d3UOi4X8_X1dVzYwPvV2MI2lZBMILDmI=s88-c-k-c0x00ffffff-no-rj', 'https://www.youtube.com/channel/UC7ED1eB6DET3fPOWxcDJ1lw'),
 (55, 'Wassim Jabi', 'https://yt3.ggpht.com/ytc/AAUvwniKrWHzPsfOXZhyVqlCHN3R7pUsb0b1rddOlcqPmw=s88-c-k-c0x00ffffff-no-rj', 'https://www.youtube.com/channel/UCRU7NkCdwfX78JHQGXc6sng'),
-(56, 'Cyprien Rusu', 'https://yt3.ggpht.com/ytc/AAUvwnghATYiiPR-g1AujrybyFFNi2uYA-BOfuh81ldQww=s88-c-k-c0x00ffffff-no-rj', 'https://www.youtube.com/channel/UCDuQsPzfqxcYKVp_uuKCzqw');
+(56, 'Cyprien Rusu', 'https://yt3.ggpht.com/ytc/AAUvwnghATYiiPR-g1AujrybyFFNi2uYA-BOfuh81ldQww=s88-c-k-c0x00ffffff-no-rj', 'https://www.youtube.com/channel/UCDuQsPzfqxcYKVp_uuKCzqw'),
+(57, 'DanamoBIM', 'https://yt3.ggpht.com/ytc/AAUvwnhujghGRZPLG_j-SteL2jAMzPJnTCDVbMNdG1Ot=s88-c-k-c0x00ffffff-no-rj', 'https://www.youtube.com/channel/UCMfCj9vt8qVpw4r2KcFRpKw');
 
 -- --------------------------------------------------------
 
@@ -114,18 +115,18 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category_name`, `description`, `category_icon`) VALUES
-(1, 'Schematic design', 'Schematic design is defined as loose sketching, idea development, prototyping, and feasibility studies, without delving into the detailed geometrical or data attributes of a design.', 'http://images.ctfassets.net/3s5io6mnxfqz/1LYm3ZMaDeA5lRPu53w9PT/6b73a5799e1f6044037a0bb8acf4f23c/AdobeStock_232427041.jpeg'),
-(2, 'GIS', 'Geographic Information Systems are used to interrogate GIS-level data, overlay multiple data sets, and integrate with BIM data.', 'https://www.magltk.com/wp-content/uploads/2019/01/%D9%86%D8%B8%D9%85-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9.jpg'),
-(3, 'Visualisation-Documentation', 'A series focused on Mechanical& Electrical Engineering specific courses.', 'https://cdn.pixabay.com/photo/2021/01/06/08/40/buildings-5893596__340.jpg'),
-(4, 'Geometry scan-process', 'Geometry scanning and processing relates to the task of laser scanning, as-built verification, point cloud manipulation, photogrammetry, and mesh reconstruction.', 'https://vvvv.org/sites/default/files/imagecache/large/capture2.jpg'),
-(5, 'CAD/BIM', 'A series focus on how machines works. From old machines, to modern computers.', 'https://consult-bim.com/assets/img/team/Design_Sigma.jpg'),
-(6, 'Mesh Generator and Scientific Data viz', 'Mesh Generator and scientific Data visualisation', 'https://gmsh.info/gallery/Zylkopf3D_small.png'),
-(7, 'Structural Thermal and CFD Analysis', 'Structural Thermal and CFD Analysis', 'https://i.pinimg.com/originals/53/36/f3/5336f3e1a3538f1d8eb90f16ead988e0.png'),
-(8, 'Environmental Analysis', 'Environmental Analysis', 'https://pbs.twimg.com/media/Ej-QOpQXgAI5j9i.jpg'),
-(9, 'Project Management', '', 'https://d57439wlqx3vo.cloudfront.net/iblock/5d5/5d56f403033e04db25c5d3bb04e9639f/20f9a94927a2d8b4400129b2c12651b6.jpg'),
-(10, 'Facility Management', 'Facility Management', 'https://mydigitalbuildings.com/assets/posts/PT003/article-digitalisation-facility-management-750-56addedf5f51f43272e62b3bd59f785c0484cf8323f7c8ad898d01ea8bde376343c31c64da05fe36401761095717e84738d8aa7cc2ba034fcec9a59a0e418568.jpg'),
-(11, 'Software Development', 'Software Development', 'https://www.exatosoftware.com/blog/wp-content/uploads/2020/06/Software-development.jpg'),
-(12, 'Proprietary software', '', 'https://damassets.autodesk.net/content/dam/autodesk/www/solutions/bim/images/landing/BIM-interoperability-image-thumb-600x300.png');
+(1, 'Schematic design', 'Schematic design is defined as loose sketching, idea development, prototyping, and feasibility studies, without delving into the detailed geometrical or data attributes of a design.', 'assets/img/AdobeStock_232427041.jpeg'),
+(2, 'GIS', 'Geographic Information Systems are used to interrogate GIS-level data, overlay multiple data sets, and integrate with BIM data.', 'assets/img/%D9%86%D8%B8%D9%85-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9.jpg'),
+(3, 'Visualisation-Documentation', 'A series focused on Mechanical& Electrical Engineering specific courses.', 'assets/img/buildings-5893596__340.jpg'),
+(4, 'Geometry scan-process', 'Geometry scanning and processing relates to the task of laser scanning, as-built verification, point cloud manipulation, photogrammetry, and mesh reconstruction.', 'assets/img/capture2.jpg'),
+(5, 'CAD/BIM', 'A series focus on how machines works. From old machines, to modern computers.', 'assets/img/Design_Sigma.jpg'),
+(6, 'Mesh Generator and Scientific Data viz', 'Mesh Generator and scientific Data visualisation', 'assets/img/Zylkopf3D_small.png'),
+(7, 'Structural Thermal and CFD Analysis', 'Structural Thermal and CFD Analysis', 'assets/img/5336f3e1a3538f1d8eb90f16ead988e0.png'),
+(8, 'Environmental Analysis', 'Environmental Analysis', 'assets/img/Ej-QOpQXgAI5j9i.jpg'),
+(9, 'Project Management', '', 'assets/img/20f9a94927a2d8b4400129b2c12651b6.jpg'),
+(10, 'Facility Management', 'Facility Management', 'assets/img/article-digitalisation-facility-management-750-56addedf5f51f43272e62b3bd59f785c0484cf8323f7c8ad898d01ea8bde376343c31c64da05fe36401761095717e84738d8aa7cc2ba034fcec9a59a0e418568.jpg'),
+(11, 'Software Development', 'Software Development', 'assets/img/Software-development.jpg'),
+(12, 'Proprietary software', '', 'assets/img/BIM-interoperability-image-thumb-600x300.png');
 
 -- --------------------------------------------------------
 
@@ -165,16 +166,6 @@ INSERT INTO `episodes` (`id`, `episode_title`, `episode_link`, `description`, `s
 (17, 'View Sun Settings (API 3)', 'WgAImKQPrG4', '', 4),
 (18, 'Room Boundaries (API 4)', 'WLaRdt_DmRc', '', 4),
 (19, 'Create Area Lines (API 5)', '2QIyYvhdC4c', '', 4),
-(28, 'Melnikov House | Full Project | #1', 'i7xkoARoQhA', '', 5),
-(29, 'Melnikov House | Full Project | #2', 'veGkgFb2MiE', '', 5),
-(30, 'Adaptive family | Part 1', 'PvfL016fFbU', '', 6),
-(31, 'Adaptive family | Part 2', 'kxtoE_ML2t0', '', 6),
-(32, 'Adaptive family | Part 3', 'kp9cX3IVRWM', '', 6),
-(33, 'Adaptive family | Part 4', 'ZNBAeeN1bF8', '', 6),
-(34, 'Adaptive family | Part 5', '9Phud_lR1bw', '', 6),
-(35, 'Adaptive family | Profiles | Extra', '_b_1CZ76Pck', '', 6),
-(36, 'Parametric tower 1', '4LGw1g5sGEo', '', 2),
-(37, 'Parametric tower 2', '4o6qpYS5NnY', '', 2),
 (38, 'BlenderBIM tour#1 with Dion Moult - IFCCSV', 'ZeMkG6jTzAg&list', 'Dion Moult is showing me how to use the IFCCSV feature/function in BlenderBIM, and what you can do with it. ', 9),
 (39, 'BlenderBIM Add-On v0.0.201115 release - chat', 'BwbXzFk1EKc', 'Here is an unfiltered chat I had with Dion Moult about the roadmap and some updates in the latest release of the BlenderBIM Add-on. Dion is an architect and software developer passionate about Open Source. He is also the main developer of BlenderBIM ', 9),
 (40, 'BlenderBIM Add-on v0.0.210131#huge​ release!', 'R-8uzPU__UM', '', 9),
@@ -511,7 +502,8 @@ INSERT INTO `episodes` (`id`, `episode_title`, `episode_link`, `description`, `s
 (382, '[ Paraview Tutorial 8 ] Working with Time Data and Animation', 'hLeZNNQmIFk', '', 73),
 (383, '[ Paraview Tutorial 9 ] Selection, plot over time and data extraction', 'U2sKoN9NGc8', '', 73),
 (384, '[ Paraview Tutorial 10 ] Property Animation and Camera Orbiting', 'sLAMXfkJk7U', '', 73),
-(385, '[ Paraview Tutorial 11 ] Automating Paraview Tasks with Python Script', 'FTUBpqkC3Ss', '', 73);
+(385, '[ Paraview Tutorial 11 ] Automating Paraview Tasks with Python Script', 'FTUBpqkC3Ss', '', 73),
+(386, 'Ep1 - Revit Workset Creation and Default Visibility Settings', '4GY3zaroeVg', '', 74);
 
 -- --------------------------------------------------------
 
@@ -537,10 +529,6 @@ INSERT INTO `series` (`id`, `series_name`, `series_description`, `author_id`, `s
 (2, 'Blender Parametric Tower', 'Series looking at using various tools within blender to quickly develop a non-destructive tower massing base mesh and use it to create a series of different tesselations', 1, 3, 'youtube.com/playlist?list=PLJThqQUeIsPQWBCcuc5GSSRyM4XgR8yZY'),
 (3, 'Learn Dynamo Series', 'This playlist is tailored for beginners who are just starting to learn Dynamo. Over time, the tutorials will advance based on what we learn during each previous session.', 2, 1, 'https://www.youtube.com/playlist?list=PLBKwx9iS-Luk38UWL7gU9LCP_gojOu1qi'),
 (4, 'Python in Dynamo', 'Python in Dynamo', 2, 1, 'https://www.youtube.com/playlist?list=PLBKwx9iS-Lun4z5igR9dCzTG3-GdNayq7'),
-(5, 'Melnikov House - Full Project ', '', 4, 1, 'https://www.youtube.com/watch?v=i7xkoARoQhA&list=PLpH7oSFnuC2r8ywf2_rL9Y1g73AbGL-_U'),
-(6, 'Adaptive Family', 'I will start tutorials about the adaptive family. In this tutorial, I\'ll introduce what is adaptive. and we will do a simple adaptive family.', 4, 1, 'https://www.youtube.com/watch?v=PvfL016fFbU&list=PLpH7oSFnuC2qS2VVd1qqeDQfKmhpk1o7F'),
-(7, 'Every Revit Tool', '', 6, 1, 'https://www.youtube.com/watch?v=qamxj1Kjqmw&list=PLSjucPSdTQH5MfRWVM5QKUL6nEIvI8ipL'),
-(8, 'Common How-To\'s', '', 6, 1, 'https://www.youtube.com/playlist?list=PLSjucPSdTQH7d-YRATN7yRwNy4LT4eLdK'),
 (9, 'BlenderBIM Tour and Updates', 'How to use the BlenderBIM addon. Showcashing its features, updates and possible workflows you can achieve with this plugin.', 10, 60, 'https://www.youtube.com/playlist?list=PLUIgjxgKOw-p2PXjanhYszjmbXcSUKIrK'),
 (14, 'Bien débuter avec Freecad [FR]', 'Bien débuter avec Freecad [FR]', 12, 14, 'https://www.youtube.com/playlist?list=PL1P4z1vfrsq8KZ2mHqRBZg8aoftq_w6vY'),
 (15, 'BIM with FreeCAD', 'How to set FreeCAD up to start working with BIM, or what you need to know to start exploring....', 13, 62, 'https://www.youtube.com/playlist?list=PLmKdGVtV5Vnt2cj4IZIv9FM39QHaE1ZaU'),
@@ -577,8 +565,6 @@ INSERT INTO `series` (`id`, `series_name`, `series_description`, `author_id`, `s
 (46, 'IFC Explained', '', 28, 11, 'https://www.youtube.com/playlist?list=PLli9VT1MpntTGaOdONNt-GKEVYyA9He1p'),
 (47, 'BlenderBIM Add-on Demo', 'BlenderBIM Add-on Demos. Pleae bear in mind the User interface is constantly improved - you will find all a number of demonstrations on how to create BIM-data rich IFC files.', 38, 60, ''),
 (48, 'Ladybug for blender', 'How to use Ladybug with the Visual Programming tool Sverchok', 38, 123, 'https://www.youtube.com/watch?v=rMCuSwsF2aM&list=PLgAKO-tNTLzZOCpCthvrnw877S893nF-b&index=18'),
-(49, 'ArchiCAD 21 - for beginners', 'Get into a new Way of Learning ArchiCAD 21 by Graphisoft. ArchiCAD 21 tutorial for beginners, getting started, basics.', 40, 2, ''),
-(50, 'Archicad 23 - Formation complè', '', 41, 2, 'https://www.youtube.com/playlist?list=PL67E5koRkhfy9n_4AtEbfkrM-01cihE_c'),
 (51, 'BlenderGIS short guides', 'Short episdoes on BlenderGIS for visualisations', 42, 27, 'https://www.youtube.com/channel/UCIldsycnma5sHR1VRP38vhg'),
 (52, 'Intro to PointCloud Viz', 'Introduction to the Blender Add-on \" Point Clous Visualisation\", allowing you to import raw point cloud data and process everything in Blender', 42, 58, ''),
 (53, 'CloudCompare Basics', '', 43, 53, 'https://www.youtube.com/watch?v=4DtyL7xmBl0'),
@@ -597,7 +583,8 @@ INSERT INTO `series` (`id`, `series_name`, `series_description`, `author_id`, `s
 (70, 'COMPAS Presentation', 'For the third #Monthly​ #Meetup​ of the year Gonzalo Casas will talk about COMPAS (https://lnkd.in/dQeaCyi​), an #opensource​ framework for research and collaboration in AE(F)C.', 53, 63, 'https://www.youtube.com/watch?v=W60A-2eKbSk&ab_channel=OSArch'),
 (71, 'LIVENODING', 'Taking a look at Erindale\'s \"Automatic 3D From Floor Plan\" SVerchok Group ', 54, 64, 'https://www.youtube.com/watch?v=SSXRz7sUGLU&list=PLeQc3-WBIZnNIqgYJuo5bTM27pbByQY4z&index=4'),
 (72, 'Topologic Demos', 'A Number of demonstrations of how you can use Topologic', 55, 65, 'https://www.youtube.com/watch?v=d4uC_XMGAPY'),
-(73, 'Paraview Video Tutorials', 'Tutorials on the famous open-source post-processing software called Paraview.', 56, 117, 'https://www.youtube.com/playlist?list=PLvkU6i2iQ2fpcVsqaKXJT5Wjb9_ttRLK-');
+(73, 'Paraview Video Tutorials', 'Tutorials on the famous open-source post-processing software called Paraview.', 56, 117, 'https://www.youtube.com/playlist?list=PLvkU6i2iQ2fpcVsqaKXJT5Wjb9_ttRLK-'),
+(74, 'Pythoon Tools for Revit', '', 57, 1, 'https://www.youtube.com/playlist?list=PLFr7Ui8SqJTW8octM76fbwgCai1LP2h5X');
 
 -- --------------------------------------------------------
 
@@ -618,63 +605,63 @@ CREATE TABLE `subcategories` (
 --
 
 INSERT INTO `subcategories` (`id`, `subcategory_name`, `subcategory_description`, `category_id`, `subcategory_icon`) VALUES
-(1, 'Revit', 'This sub-section gives you a wide range of Revit specific tutorials.', 12, 'https://static.wixstatic.com/media/cde5ce_fe9621054c604556b3708e0f1baf6ce5~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/revit-icon-400px-social.webp'),
-(2, 'Archichad', 'This sub-section gathers Archicad tutorials to get you up to speed on your Architectural software skills.', 12, 'https://pbs.twimg.com/profile_images/1280812807647367169/vtw1HUV__400x400.jpg'),
-(3, 'Blender', 'This sub-section gathers Blender tutorials to get you up to speed on your 3D modelling skills. ', 1, 'https://wiki.osarch.org/images/3/35/Icon_blender_icon_64x64.png'),
-(4, 'SketchUp', 'This sub-section gathers Sketchup tutorials to get you up to speed on your Architectural software skills.', 12, 'https://static.thenounproject.com/png/651682-200.png'),
-(5, 'Tekla Structures', 'This sub-section gathers Tekla specific tutorials to get you up to speed on Software skills for Civil Engineering.', 12, 'https://download.tekla.com/sites/default/files/images/products/logos/2020-Downloads-Icon-TS-128x128.svg'),
-(6, 'Civil 3D', 'This sub-section gathers Civil 3D tutorials to get you up to speed on Software skills for Civil Engineering.', 12, 'https://www.manandmachine.fr/wp-content/uploads/2020/04/autodesk-civil-3d-social-400.png'),
-(7, 'CS50 Harvard Lectures', '', 11, 'https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield_wreath.svg/1200px-Harvard_shield_wreath.svg.png'),
-(8, 'Web Programming', '', 11, 'https://e7.pngegg.com/pngimages/840/443/png-clipart-html-5-logo-web-development-html-css3-canvas-element-web-design-w3c-html5-logo-miscellaneous-text-thumbnail.png'),
-(9, 'Game Development', 'Game Development is the art of creating games and describes the design, development and release of a game. It may involve concept generation, design, build, test and release. While you create a game, it is important to think about the game mechanics, rewa', 11, 'https://cdn1.iconfinder.com/data/icons/game-design-butterscotch-vol-1/256/Game_Development-512.png'),
-(10, 'Hardware', '', 11, ''),
-(11, 'BIM Standards and IFC', '', 5, ''),
-(12, 'Computer Architecture', '', 11, 'https://w7.pngwing.com/pngs/68/493/png-transparent-computer-icons-computer-hardware-computer-blue-electronics-text.png'),
-(13, 'Software Development', '', 11, 'https://p7.hiclipart.com/preview/973/940/957/laptop-computer-icons-user-programmer-laptop-thumbnail.jpg'),
-(14, 'FreeCAD', 'FreeCAD is an open-source parametric 3D modeler made primarily to design real-life objects of any size. Parametric modeling allows you to easily modify your design by going back into your model history and changing its parameters', 1, 'https://wiki.osarch.org/images/3/33/Icon_FreeCAD.png'),
-(16, 'Sweet Home 3d', 'Sweet Home 3D is a free interior design application that helps you draw the plan of your house, arrange furniture on it and visit the results in 3D.', 1, 'https://wiki.osarch.org/images/5/52/Icon_SweetHome3D_64x64.png'),
-(27, 'BlenderGIS', 'Blender add-on. Make the bridge between Blender and geographic data', 2, 'https://wiki.osarch.org/images/3/35/Icon_blender_icon_64x64.png'),
-(28, 'depthmapX', 'depthmapX is an open-source and multi-platform spatial analysis software for spatial networks of different scales, from buildings and small urban areas to whole cities or states.', 2, ''),
-(29, 'Grass GIS', 'Geographic Resources Analysis Support System (GRASS) from the U.S. Army Corps of Engineers\' Construction Engineering Research Laboratory (USA/CERL)', 2, 'https://wiki.osarch.org/images/2/2c/Grassgis_logo_colorlogo_text_whitebg_64.png'),
-(30, 'JOSM', 'JOSM is an extensible editor for ​OpenStreetMap (OSM) for ​Java 8+. It supports loading GPX tracks, background imagery, and OSM data from local sources as well as from online sources', 2, 'https://wiki.osarch.org/images/d/de/Icon_JOSM_64x64.png'),
-(31, 'mago3D', 'mago3D seamlessly integrates AEC (Architecture, Engineering, Construction) and 3D GIS in web browser using Cesium.', 10, 'https://wiki.osarch.org/images/2/2f/Icon_mago3D_64x64.png'),
-(32, 'Open Orienteering', 'OpenOrienteering is a project developing a collection of tools which help with the creation of orienteering maps and the organization of orienteering events.', 2, ''),
-(33, 'OpenStreetMap', 'OpenStreetMaps is a community built map of the world, powering map data about roads, trails, cafés, railway stations, and much more, on thousands of web sites, mobile apps, and hardware devices.', 2, 'https://wiki.osarch.org/images/e/ec/Icon_openstreetmap_64x64.png'),
-(34, 'QGIS', 'A Free and Open Source Geographic Information System to create, edit, visualise, analyse and publish geospatial information.', 2, 'https://wiki.osarch.org/images/5/5c/Icon_qgis_64x64.jpeg'),
-(35, 'QField', 'An android app that syncs your QGIS projects to a mobile device and allows for in the field GIS data viewing and entry.', 2, 'https://wiki.osarch.org/images/6/63/Icon_qfield-logo.svg'),
-(36, 'SAGA', 'GIS System for Automated Geoscientific Analyses designed for the easy and effective implementation of spatial algorithms.', 2, 'https://wiki.osarch.org/images/8/8a/Icon_saga.png'),
-(44, 'Appleseed', '	appleseed is an open source, physically-based global illumination rendering engine primarily designed for animation and visual effects. It provides individuals and small studios with a complete, reliable. rendering', 3, 'https://wiki.osarch.org/images/thumb/e/e2/Appleseed_logo.png/64px-Appleseed_logo.png'),
-(45, 'Blender-Visualisation', 'Blender is the free and open source 3D creation suite. It supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing and motion tracking, video editing and 2D animation pipeline.', 3, 'https://wiki.osarch.org/images/3/35/Icon_blender_icon_64x64.png'),
-(46, 'GIMP', 'GIMP is a cross-platform image editor available for GNU/Linux, OS X, Windows and more operating systems. GIMP provides the tools needed for high quality image manipulation.', 3, 'https://wiki.osarch.org/images/d/d2/Icon_gimp_64x64.png'),
-(47, 'Hugin', 'An easy to use cross-platform panoramic imaging toolchain based on Panorama Tools. With Hugin you can assemble a mosaic of photographs into a complete immersive panorama, stitch any series of overlapping pictures and much more.', 3, 'https://wiki.osarch.org/images/b/b7/Icon_hugin-shadow_64x64.png'),
-(48, 'Inkscape', 'Inkscape is a professional vector graphics editor for Linux, Windows and macOS. Whether you are an illustrator, designer, web designer or just someone who needs to create some vector imagery, Inkscape is for you!', 3, 'https://wiki.osarch.org/images/0/0a/Icon_inkscape_64x64.png'),
-(49, 'Krita', 'Krita is a professional free and open source painting program. It is made by artists that want to see affordable art tools for everyone. It specialises in concept art, texture and matte painters, illustrations and comics.', 3, 'https://wiki.osarch.org/images/4/4d/Icon_krita_icon.png'),
-(50, 'LuxRender', 'LuxCoreRender is a physically based and unbiased rendering engine. Based on state of the art algorithms, LuxCoreRender simulates the flow of light according to physical equations, thus producing realistic images of photographic quality.', 3, 'https://wiki.osarch.org/images/5/50/Icon_Luxrender_logo_64px.png'),
-(53, 'CloudCompare', 'CloudCompare is a 3D point cloud (and triangular mesh) processing software. It was originally designed to perform comparison between two 3D points clouds (such as the ones obtained with a laser scanner) or between a point cloud and a triangular mesh.', 4, 'https://www.danielgm.net/cc/images/cc_logo_v2.gif'),
-(54, 'COLMAP', 'COLMAP is a general-purpose, end-to-end image-based 3D reconstruction pipeline. etc.', 4, 'https://windows-cdn.softpedia.com/screenshots/thumbs/COLMAP-thumb.png'),
-(56, 'MeshLab', 'MeshLab is the open source system for processing and editing 3D triangular meshes. It provides a set of tools for editing, cleaning, healing, inspecting, rendering, texturing and converting meshes', 4, 'https://wiki.osarch.org/images/thumb/5/54/MeshlabjsLogo.png/64px-MeshlabjsLogo.png'),
-(57, 'Open Drone Map', 'Generate maps, point clouds, DEMs and 3D models from aerial images.', 4, 'https://wiki.osarch.org/images/c/cf/Odm-logo.svg'),
-(58, 'Point Cloud Visualizer', 'Blender add-on. Display, edit, filter, render, convert, generate and export colored point cloud PLY files in Blender.', 4, 'https://wiki.osarch.org/images/3/35/Icon_blender_icon_64x64.png'),
-(59, 'Archipack', 'Blender add-on. Quickly model parametric architectural objects in Blender, with a real-time, on-screen editing interface, designed for speed. ', 5, 'https://wiki.osarch.org/images/5/59/Icon_ArchiPack_64.png'),
-(60, 'BlenderBIM Add-on', 'Blender add-on. An add-on for beautiful, detailed, and data-rich OpenBIM with Blender. Create data-rich IFC4 data to future-proof your BIM data and integrate with the rest of the OpenBIM ecosystem. ', 5, 'https://wiki.osarch.org/images/thumb/c/c9/BlenderBIM_Addon_logo.png/64px-BlenderBIM_Addon_logo.png'),
-(61, 'CAD Transform', 'Blender add-on. CAD like transform operations for blender 2.8+ ', 5, 'https://wiki.osarch.org/images/8/86/Icon_CADTransform_64.png'),
-(62, 'FreeCAD', 'FreeCAD is an open-source, extensible, parametric 2D and 3D modeler primarily designed for mechanical engineering but which can be used in many different fields like machining, routing, 3D printing, finite element analysis, and of course, architecture and', 5, 'https://wiki.osarch.org/images/3/33/Icon_FreeCAD.png'),
-(63, 'COMPAS', '\"A computational framework for collaboration and research in Architecture, Engineering, Fabrication, and Construction\" ', 5, 'https://wiki.osarch.org/images/thumb/f/fb/Compas_icon_white.png/64px-Compas_icon_white.png'),
-(64, 'Sverchok', 'Blender add-on. Sverchok is a parametric tool for architects and designers for Blender. You can use it to program objects\' shapes without knowing any programming languages. Sverchok has been inspired by Grasshopper from Rhino 3D and it uses a similar node', 5, ''),
-(65, 'Topologic', 'Topologic is a software modelling library enabling hierarchical and topological representations of architectural spaces, buildings and artefacts through non-manifold topology. ', 5, 'https://wiki.osarch.org/images/6/64/Icon_topologic_64x64.png'),
-(102, 'openMAINT', 'openMAINT is the application for the management of mobile assets, plants and technical devices, furniture, etc., and the related logistical, economical and maintenance activities, scheduled and breakdown ones. ', 10, 'https://wiki.osarch.org/images/thumb/1/14/Logo_openmaint.png/64px-Logo_openmaint.png'),
-(103, 'GanttProject', 'GanttProject is a free desktop project scheduling application for small and medium businesses which need Gantt charts. ', 9, 'https://wiki.osarch.org/images/b/b4/Icon_ganttproject_64.png'),
-(117, 'ParaView', 'ParaView is an open-source, multi-platform data analysis and visualization application. ParaView users can quickly build visualizations to analyze their data using qualitative and quantitative techniques. The data exploration can be done interactively in ', 6, ''),
-(118, 'blastFoam', 'A CFD solver, built on top of OpenFOAM,for multi-component compressible flow with application to high-explosive detonation, explosive safety and air blast. ', 7, ''),
+(1, 'Revit', 'Learn how to use Revit in openBIM workflows and Dynamo', 12, 'revit-icon-400px-social.webp'),
+(2, 'Archichad', 'Learn how  to use Archicad in openBIM workflows', 12, 'vtw1HUV__400x400.jpg'),
+(3, 'Blender', 'Blender is a free and open-source 3D computer graphics software toolset used for creating animated films, visual effects, art, 3D printed models, motion graphics, interactive 3D applications, virtual reality, and computer games.', 1, 'Icon_blender_icon_64x64.png'),
+(4, 'SketchUp', 'Learn how  to use Sketchup in openBIM workflows', 12, '651682-200.png'),
+(5, 'Tekla Structures', 'Learn how  to use Tekla in openBIM workflows', 12, '2020-Downloads-Icon-TS-128x128.svg'),
+(6, 'Bentley Synchro', 'Learn how to use Synchro to prepare IFC models for 4D', 12, 'autodesk-civil-3d-social-400.png'),
+(7, 'CS50 Harvard Lectures', '', 11, '1200px-Harvard_shield_wreath.svg.png'),
+(8, 'Web Programming', '', 11, 'png-clipart-html-5-logo-web-development-html-css3-canvas-element-web-design-w3c-html5-logo-miscellaneous-text-thumbnail.png'),
+(9, 'Game Development', 'Game Development is the art of creating games and describes the design, development and release of a game. It may involve concept generation, design, build, test and release. While you create a game, it is important to think about the game mechanics, rewa', 11, 'Game_Development-512.png'),
+(10, 'Hardware', '', 11, 'hardware.png'),
+(11, 'BIM Standards and IFC', '', 5, 'Icon_ifc.png'),
+(12, 'Computer Architecture', '', 11, 'png-transparent-computer-icons-computer-hardware-computer-blue-electronics-text.png'),
+(13, 'Software Development', '', 11, 'laptop-computer-icons-user-programmer-laptop-thumbnail.jpg'),
+(14, 'FreeCAD', 'FreeCAD is an open-source parametric 3D modeler made primarily to design real-life objects of any size. Parametric modeling allows you to easily modify your design by going back into your model history and changing its parameters', 1, 'Icon_FreeCAD.png'),
+(16, 'Sweet Home 3d', 'Sweet Home 3D is a free interior design application that helps you draw the plan of your house, arrange furniture on it and visit the results in 3D.', 1, 'Icon_SweetHome3D_64x64.png'),
+(27, 'BlenderGIS', 'Blender add-on. Make the bridge between Blender and geographic data', 2, 'Icon_blender_icon_64x64.png'),
+(28, 'depthmapX', 'depthmapX is an open-source and multi-platform spatial analysis software for spatial networks of different scales, from buildings and small urban areas to whole cities or states.', 2, 'depth-map.png'),
+(29, 'Grass GIS', 'Geographic Resources Analysis Support System (GRASS) from the U.S. Army Corps of Engineers\' Construction Engineering Research Laboratory (USA/CERL)', 2, 'Grassgis_logo_colorlogo_text_whitebg_64.png'),
+(30, 'JOSM', 'JOSM is an extensible editor for ​OpenStreetMap (OSM) for ​Java 8+. It supports loading GPX tracks, background imagery, and OSM data from local sources as well as from online sources', 2, 'Icon_JOSM_64x64.png'),
+(31, 'mago3D', 'mago3D seamlessly integrates AEC (Architecture, Engineering, Construction) and 3D GIS in web browser using Cesium.', 10, 'Icon_mago3D_64x64.png'),
+(32, 'Open Orienteering', 'OpenOrienteering is a project developing a collection of tools which help with the creation of orienteering maps and the organization of orienteering events.', 2, 'open-orienteering.png'),
+(33, 'OpenStreetMap', 'OpenStreetMaps is a community built map of the world, powering map data about roads, trails, cafés, railway stations, and much more, on thousands of web sites, mobile apps, and hardware devices.', 2, 'Icon_openstreetmap_64x64.png'),
+(34, 'QGIS', 'A Free and Open Source Geographic Information System to create, edit, visualise, analyse and publish geospatial information.', 2, 'Icon_qgis_64x64.jpeg'),
+(35, 'QField', 'An android app that syncs your QGIS projects to a mobile device and allows for in the field GIS data viewing and entry.', 2, 'Icon_qfield-logo.svg'),
+(36, 'SAGA', 'GIS System for Automated Geoscientific Analyses designed for the easy and effective implementation of spatial algorithms.', 2, 'Icon_saga.png'),
+(44, 'Appleseed', 'Appleseed is an open source, physically-based global illumination rendering engine primarily designed for animation and visual effects. It provides individuals and small studios with a complete, reliable. rendering', 3, '64px-Appleseed_logo.png'),
+(45, 'Blender-Visualisation', 'Blender is the free and open source 3D creation suite. It supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing and motion tracking, video editing and 2D animation pipeline.', 3, 'Icon_blender_icon_64x64.png'),
+(46, 'GIMP', 'GIMP is a cross-platform image editor available for GNU/Linux, OS X, Windows and more operating systems. GIMP provides the tools needed for high quality image manipulation.', 3, 'Icon_gimp_64x64.png'),
+(47, 'Hugin', 'An easy to use cross-platform panoramic imaging toolchain based on Panorama Tools. With Hugin you can assemble a mosaic of photographs into a complete immersive panorama, stitch any series of overlapping pictures and much more.', 3, 'Icon_hugin-shadow_64x64.png'),
+(48, 'Inkscape', 'Inkscape is a professional vector graphics editor for Linux, Windows and macOS. Whether you are an illustrator, designer, web designer or just someone who needs to create some vector imagery, Inkscape is for you!', 3, 'Icon_inkscape_64x64.png'),
+(49, 'Krita', 'Krita is a professional free and open source painting program. It is made by artists that want to see affordable art tools for everyone. It specialises in concept art, texture and matte painters, illustrations and comics.', 3, 'Icon_krita_icon.png'),
+(50, 'LuxRender', 'LuxCoreRender is a physically based and unbiased rendering engine. Based on state of the art algorithms, LuxCoreRender simulates the flow of light according to physical equations, thus producing realistic images of photographic quality.', 3, 'Icon_Luxrender_logo_64px.png'),
+(53, 'CloudCompare', 'CloudCompare is a 3D point cloud (and triangular mesh) processing software. It was originally designed to perform comparison between two 3D points clouds (such as the ones obtained with a laser scanner) or between a point cloud and a triangular mesh.', 4, 'cc_logo_v2.gif'),
+(54, 'COLMAP', 'COLMAP is a general-purpose, end-to-end image-based 3D reconstruction pipeline. etc.', 4, 'COLMAP-thumb.png'),
+(56, 'MeshLab', 'MeshLab is the open source system for processing and editing 3D triangular meshes. It provides a set of tools for editing, cleaning, healing, inspecting, rendering, texturing and converting meshes', 4, '64px-MeshlabjsLogo.png'),
+(57, 'Open Drone Map', 'Generate maps, point clouds, DEMs and 3D models from aerial images.', 4, 'Odm-logo.svg'),
+(58, 'Point Cloud Visualizer', 'Blender add-on. Display, edit, filter, render, convert, generate and export colored point cloud PLY files in Blender.', 4, 'Icon_blender_icon_64x64.png'),
+(59, 'Archipack', 'Blender add-on. Quickly model parametric architectural objects in Blender, with a real-time, on-screen editing interface, designed for speed. ', 5, 'Icon_ArchiPack_64.png'),
+(60, 'BlenderBIM Add-on', 'Blender add-on. An add-on for beautiful, detailed, and data-rich OpenBIM with Blender. Create data-rich IFC4 data to future-proof your BIM data and integrate with the rest of the OpenBIM ecosystem. ', 5, '64px-BlenderBIM_Addon_logo.png'),
+(61, 'CAD Transform', 'Blender add-on. CAD like transform operations for blender 2.8+ ', 5, 'Icon_CADTransform_64.png'),
+(62, 'FreeCAD', 'FreeCAD is an open-source, extensible, parametric 2D and 3D modeler primarily designed for mechanical engineering but which can be used in many different fields like machining, routing, 3D printing, finite element analysis, and of course, architecture and', 5, 'Icon_FreeCAD.png'),
+(63, 'COMPAS', '\"A computational framework for collaboration and research in Architecture, Engineering, Fabrication, and Construction\" ', 5, '64px-Compas_icon_white.png'),
+(64, 'Sverchok', 'Blender add-on. Sverchok is a parametric tool for architects and designers for Blender. You can use it to program objects\' shapes without knowing any programming languages. Sverchok has been inspired by Grasshopper from Rhino 3D and it uses a similar node', 5, 'Icon_blender_icon_64x64.png'),
+(65, 'Topologic', 'Topologic is a software modelling library enabling hierarchical and topological representations of architectural spaces, buildings and artefacts through non-manifold topology. ', 5, 'Icon_topologic_64x64.png'),
+(102, 'openMAINT', 'openMAINT is the application for the management of mobile assets, plants and technical devices, furniture, etc., and the related logistical, economical and maintenance activities, scheduled and breakdown ones. ', 10, '64px-Logo_openmaint.png'),
+(103, 'GanttProject', 'GanttProject is a free desktop project scheduling application for small and medium businesses which need Gantt charts. ', 9, 'Icon_ganttproject_64.png'),
+(117, 'ParaView', 'ParaView is an open-source, multi-platform data analysis and visualization application. ParaView users can quickly build visualizations to analyze their data using qualitative and quantitative techniques. The data exploration can be done interactively in ', 6, 'ParaView_Logo.svg'),
+(118, 'blastFoam', 'A CFD solver, built on top of OpenFOAM,for multi-component compressible flow with application to high-explosive detonation, explosive safety and air blast. ', 7, 'Icon_Blasfoam.png'),
 (119, 'CalculiX', '', 7, ''),
-(120, 'Code_Aster', 'Code_Aster offers a full range of multiphysical analysis and modelling methods that go well beyond the standard functions of a thermo mechanical calculation code: from seismic analysis to porous media via acoustics, fatigue, stochastic dynamics,etc. ', 7, 'https://wiki.osarch.org/images/thumb/2/25/Icon_code_aster.png/64px-Icon_code_aster.png'),
-(121, 'OpenFOAM', ' 	OpenFOAM is the free, open source CFD software developed primarily by OpenCFD Ltd since 2004. It has a large user base across most areas of engineering and science, from both commercial and academic organisations. OpenFOAM has an extensive range of feat', 7, 'https://wiki.osarch.org/images/thumb/6/65/OpenFoam_logo.png/64px-OpenFoam_logo.png'),
+(120, 'Code_Aster', 'Code_Aster offers a full range of multiphysical analysis and modelling methods that go well beyond the standard functions of a thermo mechanical calculation code: from seismic analysis to porous media via acoustics, fatigue, stochastic dynamics,etc. ', 7, '64px-Icon_code_aster.png'),
+(121, 'OpenFOAM', 'OpenFOAM is the free, open source CFD software developed primarily by OpenCFD Ltd since 2004. It has a large user base across most areas of engineering and science, from both commercial and academic organisations. OpenFOAM has an extensive range of feat', 7, '64px-OpenFoam_logo.png'),
 (122, 'Salome', 'SALOME is an open-source software that provides a generic Pre- and Post-Processing platform for numerical simulation. It is based on an open and flexible architecture made of reusable components.', 7, ''),
-(123, 'Ladybug Tools', 'Ladybug Tools is a collection of free computer applications that support environmental design and education connecting 3D Computer-Aided Design (CAD) interfaces to a host of validated simulation engines. Ladybug Tools can be used as a suite of Python libr', 8, 'https://wiki.osarch.org/images/8/87/Icon_ladybug_64x64.png'),
+(123, 'Ladybug Tools', 'Ladybug Tools is a collection of free computer applications that support environmental design and education connecting 3D Computer-Aided Design (CAD) interfaces to a host of validated simulation engines. Ladybug Tools can be used as a suite of Python libr', 8, 'Icon_ladybug_64x64.png'),
 (124, 'Radiance', 'Radiance is a suite of programs for the analysis and visualization of lighting in design. Input files specify the scene geometry, materials, luminaires, time, date and sky conditions (for daylight calculations). Calculated values include spectral radiance', 8, ''),
-(125, 'BIMxBEM', 'A tool which analyze IFC data to feed local standards compliant energy related data to energy simulation softwares. ', 8, ''),
-(126, 'OpenProject', 'OpenProject is the leading open source project management software. Support your project management process along the entire project life cycle: From project initiation to closure. Includes support for BCF', 9, 'https://wiki.osarch.org/images/a/af/Icon_OpenProject_64x64.png'),
-(127, 'ProjectLibre', 'ProjectLibre is a free and open-source project management software system intended ultimately as a standalone replacement for Microsoft Project. ProjectLibre was developed by the founders of the abandoned project OpenProj. 	', 9, 'https://wiki.osarch.org/images/4/47/Logo_ProjectLibre_64.png');
+(125, 'BIMxBEM', 'A tool which analyze IFC data to feed local standards compliant energy related data to energy simulation softwares. ', 8, 'Icon_FreeCAD.png'),
+(126, 'OpenProject', 'OpenProject is the leading open source project management software. Support your project management process along the entire project life cycle: From project initiation to closure. Includes support for BCF', 9, 'Icon_OpenProject_64x64.png'),
+(127, 'ProjectLibre', 'ProjectLibre is a free and open-source project management software system intended ultimately as a standalone replacement for Microsoft Project. ProjectLibre was developed by the founders of the abandoned project OpenProj. 	', 9, 'Logo_ProjectLibre_64.png');
 
 --
 -- Indexes for dumped tables
@@ -722,7 +709,7 @@ ALTER TABLE `subcategories`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -734,13 +721,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `episodes`
 --
 ALTER TABLE `episodes`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=386;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=387;
 
 --
 -- AUTO_INCREMENT for table `series`
 --
 ALTER TABLE `series`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `subcategories`

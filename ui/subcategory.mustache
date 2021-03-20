@@ -1,8 +1,8 @@
 <div class="post">
     <button class=button><a href="{{baseurl}}/categories/{{category_id}}"> Back to {{category_name}} </a></button>
-    <h2 class='title'>Current section: {{subcategory_name}}</h2>
+    <h2>Current section: {{subcategory_name}}</h2>
     <hr>
-    <h2 class="">Chose a video Series from below and start practicing! </h2>
+    <h2>Chose a video Series from below and start practicing! </h2>
 </div>
 <hr>
 <div class="row">
@@ -10,13 +10,12 @@
     <div class="card">
         <div class="categories_width">
             <div class="center_content">
-                <img class= "crop_circle_img" src="{{icon}}" alt="{{author_name}}">
+                <img class= "crop_circle_img" src="{{baseurl}}/assets/img/{{icon}}" alt="{{author_name}}">
                 <p class='title'>{{author_name}}</p>
                 <h6><a href='{{baseurl}}/series/{{id}}'>{{series_name}}</a></h6>
                 <hr>
             </div>
-            
-            <p class="card_series_text">{{description}}</p>
+            <h6 class='descriptive'>{{description}}</h6>
             <br>
             <br>
             <button class="button bottom_append"><a href="{{baseurl}}/series/{{id}}"> Go </a></button>
