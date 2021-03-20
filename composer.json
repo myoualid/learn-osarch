@@ -1,7 +1,0 @@
-{
-    "require": {
-        "sergeytsalkov/meekrodb": "^2.3",
-        "mustache/mustache": "^2.13",
-        "klein/klein": "^2.1"
-    }
-}
