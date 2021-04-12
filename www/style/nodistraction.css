@@ -2,6 +2,8 @@
 /* Inspired by the JEKYL blog THEME and the CS50 OPENCOURSEWARE WEBSITE*/
 
 /* WEBSITE STYLING AND COLUMN SPLIT*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
 html,
 body {
   margin: 0;  
@@ -162,7 +164,7 @@ img {
 }
 
 .card:hover {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
   transition: 0.4s ease-out;
 }
 
@@ -186,7 +188,7 @@ img {
 }
   
 .card_series:hover {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
   transition: 0.4s ease-out;
 }
   
@@ -209,7 +211,7 @@ img {
 }
   
 .card_subcategories:hover {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
   transition: 0.4s ease-out;
 }
 
@@ -223,13 +225,12 @@ img {
 /* BUTTON DISPLAY OPTION - CURRENTLY NOT WORKING IN CERTAIN BROWSERS */
 .button {
   height: 45px;
-  font-family: 'Roboto', sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
-  color: #fff;
-  background-color: #c28e00;
+  color: rgb(0, 0, 0);
+  background-color: #e0485a;
   border: none;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -242,7 +243,7 @@ img {
   background-color: #384485;
   box-shadow: 0px 15px 20px rgba(24, 20, 87, 0.4);
   color: #fff;
-  transform: translateY(-7px);
+  transform: translateY(-3px);
 }
 
 /* MOBILE DISPLAY SETTINGS */
@@ -278,36 +279,9 @@ img {
   .nav_pc{
       display:none;
     }
-
-
 }
 
-.collapsible_menu{ 
-  display: block;
-  width: auto;
-  height: 20px; 
-  font-family: 'Roboto', sans-serif;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #fff;
-  background-color: #373844;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  }
 
-.active, .collapsible_menu:hover {
-  background-color: rgb(89, 88, 133);
-}
-
-.common_nav {
-  display:none;
-}
 
 /*JEKYLL THEME */
 /* No `:visited` state is required by default (browsers will use `a`) */
@@ -320,11 +294,11 @@ img {
 }
 
 a {
-  color: #ccd0d3;
   text-decoration: none;
+  color: #000000;
 }
 a strong {
-  color: inherit;
+  color: #000000;
 }
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
@@ -332,31 +306,41 @@ a:focus {
   text-decoration: underline;
 }
 
+a.text-logo, a.text-logo:hover, a.text-logo:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  line-height: 100%;
+  font-weight: 600;
+}
+
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   font-size: 1.6rem;
   line-height: 100%;
-  color: #fff;
   font-weight: 600;
   line-height: 1.25;
   color: #000000;
   text-rendering: optimizeLegibility;
 }
+
 h1 {
   font-size: 2rem;
-  color:#000000;
 }
+
 h2 {
   margin-top: auto;
   font-size: 1.5rem;
-  color:#000000;
 }
 
-h3, h5 {
-  margin-top: 1.5rem;
+h3 {
+  margin-top: 0;
   font-size: 1.25rem;
-  color:#000000;
+  margin-bottom: 0;
+}
+
+h5 {
+  font-size: 1.25rem;
 }
 
 h4, h6 {
