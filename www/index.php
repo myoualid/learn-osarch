@@ -2,9 +2,11 @@
 
 include '../vendor/autoload.php';
 
-\DB::$user = 'root';
-\DB::$password = '';
-\DB::$dbName = 'learnosarch';
+$config = parse_ini_file('../config.ini');
+
+\DB::$user = $config['username'];
+\DB::$password = $config['password'];
+\DB::$dbName = $config['database'];
 
 class Page {
     protected $renderer;

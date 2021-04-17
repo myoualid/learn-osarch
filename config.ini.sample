@@ -1,0 +1,5 @@
+[db]
+
+username = "root"
+password = "password"
+database = "learnosarch"
