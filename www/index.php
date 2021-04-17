@@ -12,7 +12,6 @@ class Page {
     protected $renderer;
 
     public function __construct() {
-        $config = parse_ini_file('../config.ini');
         $this->renderer = new Mustache_Engine(['entity_flags' => ENT_QUOTES]);
 
         $categories = [];
@@ -40,6 +39,7 @@ class Page {
     }
 
     public function render($template, $data) {
+        $config = parse_ini_file('../config.ini');
         $data['baseurl'] = $config['baseurl'];
         echo $this->renderer->render(file_get_contents('../ui/template.mustache'), [
             'baseurl' => $config['baseurl'],
