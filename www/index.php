@@ -14,7 +14,6 @@ class Page {
     public function __construct() {
         $config = parse_ini_file('../config.ini');
         $this->renderer = new Mustache_Engine(['entity_flags' => ENT_QUOTES]);
-        $this->baseurl = $config['baseurl'];
 
         $categories = [];
         $results = \DB::query('SELECT c.id as category_id, c.category_name,
@@ -41,8 +40,9 @@ class Page {
     }
 
     public function render($template, $data) {
+        $data['baseurl'] = $config['baseurl'];
         echo $this->renderer->render(file_get_contents('../ui/template.mustache'), [
-            'baseurl' => $this->baseurl,
+            'baseurl' => $config['baseurl'],
             'content' => $this->renderer->render(file_get_contents($template), $data),
             'categories' => array_values($this->categories)
         ]);
@@ -126,7 +126,7 @@ $klein->respond('GET', '/series/[i:id]', function ($request) {
             'icon' => $row['img_link'],
         ];
     };
-    
+
     $episodes = array_values($episodes);
     $category = $page->categories[$episodes[0]['category_id']];
     $page->categories[$episodes[0]['category_id']]['is_active_category'] = TRUE;
