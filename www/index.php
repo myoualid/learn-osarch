@@ -12,8 +12,9 @@ class Page {
     protected $renderer;
 
     public function __construct() {
+        $config = parse_ini_file('../config.ini');
         $this->renderer = new Mustache_Engine(['entity_flags' => ENT_QUOTES]);
-        $this->baseurl = 'http://localhost:8008/';
+        $this->baseurl = $config['baseurl'];
 
         $categories = [];
         $results = \DB::query('SELECT c.id as category_id, c.category_name,

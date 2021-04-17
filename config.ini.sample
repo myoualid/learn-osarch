@@ -3,3 +3,7 @@
 username = "root"
 password = "password"
 database = "learnosarch"
+
+[www]
+
+baseurl = 'https://localhost:8008/'
