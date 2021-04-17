@@ -120,7 +120,7 @@ img {
   bottom:0;
   text-align: left;
   padding: 4rem 1rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: auto;
   height:100%;
   background-color: #22252C;
@@ -136,6 +136,10 @@ img {
   position: relative;
   right:0;
   margin-left: 20rem;
+}
+
+.right_column a{
+  color: white;
 }
 
 .collapsible_menu{
@@ -271,7 +275,7 @@ img {
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
-  color: rgb(0, 0, 0);
+  color: #FFFFFF;
   background-color: #555555;
   border: none;
   border-radius: 45px;
