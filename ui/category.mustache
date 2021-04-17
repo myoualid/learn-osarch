@@ -1,5 +1,5 @@
 <div class="post">
-    <button class=button><a href="/"> Back to Categories </a></button>
+    <a href="/"> <button class=button> Back to Categories </button></a>
     <h5>Current category: {{name}}</h5>
     <h5>Chose a sub-category below:</h5>
 </div>
@@ -14,7 +14,7 @@
             <h6 class='descriptive'>{{description}}</h6>
             <br>
             <br>
-            <button class="button bottom_append"><a href="{{baseurl}}subcategories/{{id}}"> Go </a></button>            
+            <a href="{{baseurl}}subcategories/{{id}}"><button class="button bottom_append"> Go </button> </a>
         </div>
     </div>
     {{/subcategories}}
