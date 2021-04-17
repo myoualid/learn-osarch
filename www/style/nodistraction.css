@@ -127,12 +127,7 @@ img {
 }
 
 .left_column a {
-  padding: 0.5rem;
-
-}
-
-.right_column a {
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 
 .right_column {
@@ -142,10 +137,6 @@ img {
   right:0;
   margin-left: 20rem;
 }
-
-/* .right_column a {
-  color: #fff;
-} */
 
 .collapsible_menu{
   display:none;
@@ -404,6 +395,7 @@ h4, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  color: #22252C;
 }
 
 

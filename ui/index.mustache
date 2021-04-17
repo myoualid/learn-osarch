@@ -1,13 +1,12 @@
 <div class="post">
-    <h1> Chose a category below, and start learning from professionals worldwide.</h1>
+    <h1> Choose a category below, and start learning from professionals worldwide.</h1>
     <p>All rights belong to their respective owners. All Trademarks referred to are the property of their respective owners.</p>
 </div>
-<hr>
 <div class="row">
     {{#categories}}
     <div class="card">
         <div class="categories_width">
-            <img class="img_fit" src="{{baseurl}}assets/img/{{icon}}" alt="{{name}}">
+            <a href="{{baseurl}}categories/{{id}}"><img class="img_fit" src="{{baseurl}}assets/img/{{icon}}" alt="{{name}}"></a>
             <h4><b><a href="{{baseurl}}categories/{{id}}">{{id}} - {{name}}</a></b></h4>
         </div>
     </div>

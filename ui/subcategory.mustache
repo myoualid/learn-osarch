@@ -1,19 +1,16 @@
 <div class="post">
     <button class=button><a href="{{baseurl}}categories/{{category_id}}"> Back to {{category_name}} </a></button>
     <h5>Current section: {{subcategory_name}}</h5>
-    <hr>
     <h5>Find a course and learn from your favourite content creators! </h5>
 </div>
-<hr>
 <div class="row">
     {{#series}}
     <div class="card">
         <div class="categories_width">
             <div class="center_content">
-                <img class= "crop_circle_img" src="{{baseurl}}assets/img/{{icon}}" alt="{{author_name}}">
+                <a href='{{baseurl}}series/{{id}}'><img class= "crop_circle_img" src="{{baseurl}}assets/img/{{icon}}" alt="{{author_name}}"></a>
                 <p class='title'>{{author_name}}</p>
                 <h6><a href='{{baseurl}}series/{{id}}'>{{series_name}}</a></h6>
-                <hr>
             </div>
             <h6 class='descriptive'>{{description}}</h6>
             <br>

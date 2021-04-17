@@ -1,19 +1,16 @@
 <div class="post">
     <button class=button><a href="/"> Back to Categories </a></button>
     <h5>Current category: {{name}}</h5>
-    <hr>
     <h5>Chose a sub-category below:</h5>
 </div>
-<hr>
 <div class="row">
     {{#subcategories}}
     <div class="card">
         <div class="categories_width">
             <div class="center_content">
-                <img class="reduced_size center_content" src="{{baseurl}}assets/img/{{icon}}" alt="{{name}}">
+                <a href='{{baseurl}}subcategories/{{id}}'><img class="reduced_size center_content" src="{{baseurl}}assets/img/{{icon}}" alt="{{name}}"></a>
                 <h3><b><a href='{{baseurl}}subcategories/{{id}}'>{{name}}</a></b></h3>
-            </div>   
-            <hr>
+            </div>
             <h6 class='descriptive'>{{description}}</h6>
             <br>
             <br>
