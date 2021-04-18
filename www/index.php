@@ -17,7 +17,7 @@ class Page {
         $categories = [];
         $results = \DB::query('SELECT c.id as category_id, c.category_name,
           c.description as category_description, category_icon, sc.id as subcategory_id,
-          sc.subcategory_name, sc.subcategory_description as subcategory_description,
+          sc.subcategory_name, sc.subcategory_description as subcategory_description, sc.wiki_link as wiki_link,
           sc.subcategory_icon FROM `categories` AS `c` LEFT JOIN `subcategories` AS `sc` ON `sc`.`category_id`=`c`.`id`');
         foreach ($results as $row) {
             if ( ! array_key_exists($row['category_id'], $categories)) {
@@ -33,6 +33,7 @@ class Page {
                 'name' => $row['subcategory_name'],
                 'icon' => $row['subcategory_icon'],
                 'description' => $row['subcategory_description'],
+                'wiki_link' => $row['wiki_link'],
             ];
         }
         $this->categories = $categories;
@@ -70,22 +71,25 @@ $klein->respond('GET', '/subcategories/[i:id]', function ($request) {
     $page = new Page();
     $user_request = ($request->param('id'));
     $results = \DB::query("SELECT c.id as category_id, category_name, c.description as category_description, category_icon,
-      sc.id as subcategory_id, subcategory_name, subcategory_description, subcategory_icon,
-      a.author_name as author_name, a.img_link as img_link, s.id as series_id, series_name, series_link, series_description
+      sc.id as subcategory_id, subcategory_name, subcategory_description, wiki_link, subcategory_icon,
+      a.author_name as author_name, a.img_link as img_link, s.id as series_id, series_name, series_link, series_description, s.permission as series_permission
       FROM `categories` AS `c` LEFT JOIN (`subcategories` AS `sc`, `authors` AS `a`, `series` AS `s`)
       ON (`sc`.`category_id`=`c`.`id` AND `s`.`subcategory_id`=`sc`.`id` AND `s`.`author_id`=`a`.`id`) WHERE subcategory_id = '$user_request' ");
     $series = [];
     foreach ($results as $row) {
-        $series[$row['series_id']] = [
-            'subcategory_name' => $row['subcategory_name'],
-            'category_id' => $row['category_id'],
-            'category_name' => $row['category_name'],
-            'id' => $row['series_id'],
-            'series_name' => $row['series_name'],
-            'description' => $row['series_description'],
-            'author_name' => $row['author_name'],
-            'icon' => $row['img_link'],
-        ];
+        if ($row['series_permission'] == "1" ){
+            $series[$row['series_id']] = [
+                'subcategory_name' => $row['subcategory_name'],
+                'category_id' => $row['category_id'],
+                'category_name' => $row['category_name'],
+                'id' => $row['series_id'],
+                'series_name' => $row['series_name'],
+                'description' => $row['series_description'],
+                'author_name' => $row['author_name'],
+                'icon' => $row['img_link'],
+                'permission' => $row['series_permission'],
+            ];
+        };
     };
     $series = array_values($series);
     if ( !empty($series) ) {
