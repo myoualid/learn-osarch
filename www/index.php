@@ -85,6 +85,7 @@ $klein->respond('GET', '/subcategories/[i:id]', function ($request) {
                 'id' => $row['series_id'],
                 'series_name' => $row['series_name'],
                 'description' => $row['series_description'],
+                'series_link' => $row['series_link'],
                 'author_name' => $row['author_name'],
                 'icon' => $row['img_link'],
                 'permission' => $row['series_permission'],

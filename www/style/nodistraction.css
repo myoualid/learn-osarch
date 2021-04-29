@@ -214,21 +214,21 @@ img {
   background-color: #22252C;
   border-radius: 10px;
   box-shadow: -0.5rem 0 2rem #030303;
-  transition: 0.4s ease-out;
+  /* transition: 0.4s ease-out; */
   position: relative;
   left: 0px;
   text-align: justify;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  transition: 0.4s ease-out;
+  /* transform: translateY(-10px); */
+  /* transition: 0.4s ease-out; */
 }
 
 .card:hover ~ .card {
-  position: relative;
-  left: 50px;
-  transition: 0.4s ease-out;
+  /* position: relative;
+  left: 50px; */
+  /* transition: 0.4s ease-out; */
 }
 
 .card_series {
@@ -238,21 +238,21 @@ img {
   background-color: #202020;
   border-radius: 10px;
   box-shadow: -0.5rem 0 2rem #030303;
-  transition: 0.4s ease-out;
+  /* transition: 0.4s ease-out; */
   position: relative;
   left: 0px;
   height: 30rem;
 }
 
 .card_series:hover {
-  transform: translateY(-10px);
-  transition: 0.4s ease-out;
+  /* transform: translateY(-10px); */
+  /* transition: 0.4s ease-out; */
 }
 
 .card_series:hover ~ .card {
-  position: relative;
-  left: 50px;
-  transition: 0.4s ease-out;
+  /* position: relative;
+  left: 50px; */
+  /* transition: 0.4s ease-out; */
 }
 .card_subcategories {
   padding:1rem;
@@ -261,22 +261,22 @@ img {
   background-color: #22252C;
   border-radius: 10px;
   box-shadow: -0.5rem 0 2rem #030303;
-  transition: 0.4s ease-out;
+  /* transition: 0.4s ease-out; */
   position: relative;
   left: 0px;
   height: 17rem;
 }
 
 .card_subcategories:hover {
-  transform: translateY(-10px);
-  transition: 0.4s ease-out;
+  /* transform: translateY(-10px); */
+  /* transition: 0.4s ease-out; */
 }
 
 
 .card_subcategories:hover ~ .card {
-  position: relative;
-  left: 50px;
-  transition: 0.4s ease-out;
+  /* position: relative;
+  left: 50px; */
+  /* transition: 0.4s ease-out; */
 }
 
 /* BUTTON DISPLAY OPTION - CURRENTLY NOT WORKING IN CERTAIN BROWSERS */
