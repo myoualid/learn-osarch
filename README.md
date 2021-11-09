@@ -9,7 +9,6 @@ https://learn.osarch.org
 - Visualisation - Documentation
 - Geometry scan-process
 - CAD/BIM
-- Mesh Generator and Scientific Data Visualisation
 - Structural, Thermal, and CFD Analysis
 - Environmental Analysis
 - Project Management
