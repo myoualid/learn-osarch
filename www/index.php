@@ -16,13 +16,14 @@ class Page {
 
         $categories = [];
         $results = \DB::query('SELECT c.id as category_id, c.category_name,
-          c.description as category_description, category_icon, sc.id as subcategory_id,
+          c.description as category_description, category_icon, order_id, sc.id as subcategory_id,
           sc.subcategory_name, sc.subcategory_description as subcategory_description, sc.wiki_link as wiki_link,
-          sc.subcategory_icon FROM `categories` AS `c` LEFT JOIN `subcategories` AS `sc` ON `sc`.`category_id`=`c`.`id`');
+          sc.subcategory_icon FROM `categories` AS `c` LEFT JOIN `subcategories` AS `sc` ON `sc`.`category_id`=`c`.`id` ORDER BY `order_id`');
         foreach ($results as $row) {
             if ( ! array_key_exists($row['category_id'], $categories)) {
                 $categories[$row['category_id']] = [
                     'id' => $row['category_id'],
+                    'order_id' => $row['order_id'],
                     'name' => $row['category_name'],
                     'icon' => $row['category_icon'],
                     'subcategories' => []
@@ -72,7 +73,7 @@ $klein->respond('GET', '/subcategories/[i:id]', function ($request) {
     $user_request = ($request->param('id'));
     $results = \DB::query("SELECT c.id as category_id, category_name, c.description as category_description, category_icon,
       sc.id as subcategory_id, subcategory_name, subcategory_description, wiki_link, subcategory_icon,
-      a.author_name as author_name, a.img_link as img_link, s.id as series_id, series_name, series_link, series_description, s.permission as series_permission
+      a.author_name as author_name, a.img_link as img_link, s.id as series_id, series_name, series_link, series_description, is_a_guide, s.permission as series_permission
       FROM `categories` AS `c` LEFT JOIN (`subcategories` AS `sc`, `authors` AS `a`, `series` AS `s`)
       ON (`sc`.`category_id`=`c`.`id` AND `s`.`subcategory_id`=`sc`.`id` AND `s`.`author_id`=`a`.`id`) WHERE subcategory_id = '$user_request' ");
     $series = [];
@@ -89,6 +90,7 @@ $klein->respond('GET', '/subcategories/[i:id]', function ($request) {
                 'author_name' => $row['author_name'],
                 'icon' => $row['img_link'],
                 'permission' => $row['series_permission'],
+                'is_a_guide' => $row['is_a_guide'],
             ];
         };
     };
@@ -112,7 +114,8 @@ $klein->respond('GET', '/series/[i:id]', function ($request) {
     $user_request = ($request->param('id'));
     $results = \DB::query("SELECT c.id as category_id, category_name, c.description as category_description, category_icon,
       sc.id as subcategory_id, subcategory_name, subcategory_description, subcategory_icon,
-      a.author_name as author_name, a.img_link as img_link, channel_link, s.id as series_id, series_name, series_link, series_description, e.id as episode_id, episode_link, episode_title
+      a.author_name as author_name, a.img_link as img_link, channel_link, s.id as series_id, 
+      series_name, series_link, series_description, e.id as episode_id, episode_link, episode_title
       FROM `categories` AS `c` LEFT JOIN (`subcategories` AS `sc`, `authors` AS `a`, `series` AS `s`, `episodes` as `e`)
       ON (`sc`.`category_id`=`c`.`id` AND `s`.`subcategory_id`=`sc`.`id` AND `s`.`author_id`=`a`.`id` AND `e`.`series_id`=`s`.`id`) WHERE series_id = '$user_request' ");
     $episodes = [];

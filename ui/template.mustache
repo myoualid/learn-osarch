@@ -9,45 +9,41 @@
     <link rel="shortcut icon" href="{{baseurl}}assets/img/Favicon.ico"/>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="left_column">
-            <div class="sidebar-about">
-                <div class="center_content">
-                    <a href="https://osarch.org" target="_blank"><img class= "crop_circle_img" height="100rem" src="{{baseurl}}assets/img/Logo_withe_bg.png" alt="OSArch"></a>
-                    <h2><a class="text-logo"href="{{baseurl}}">OSArch Learning</a></h2>
-                    <h4>Find video tutorials on free/libre software and openBIM workflows.</h4>
-                </div>
+    <div class="left_column">
+        <div class="sidebar-about">
+            <div class="center_content">
+                <a href="https://osarch.org" target="_blank"><img class= "crop_circle_img" height="100rem" src="{{baseurl}}assets/img/Logo_withe_bg.png" alt="OSArch"></a>
+                <h2><a class="text-logo"href="{{baseurl}}">OSArch Learning</a></h2>
+                <h4>Find video tutorials on free/libre software and openBIM workflows.</h4>
             </div>
-            <button class=button><a href="{{baseurl}}"> Main Menu </a></button><br><br>
-            <nav class="nav_pc">
-            </nav>
-            <nav class="nav_pc">
-                <ol>
-                    {{#categories}}
-                    <li><a class="lead" href="{{baseurl}}categories/{{id}}">{{name}}</a></li>
-                    {{#is_active_category}}
-                    <ul>
-                        {{#subcategories}}
-                        <li><a href="{{baseurl}}subcategories/{{id}}">{{name}}</a></li>
-                        {{/subcategories}}
-                    </ul>
-                    {{/is_active_category}}
-                    <br>
-                    {{/categories}}
-                </ol>
-                <hr>
-                <a href="https://wiki.osarch.org/index.php?title=AEC_Free_Software_directory" target="_blank"><button class=button> WIKI SOFTWARE DIRECTORY </button><br><br></a>
-                <a href="https://community.osarch.org/discussion/451/learn-osarch-org-open-source-educational-resources#latest" target="_blank"><button class=button>SUBMIT RESOURCES</button></a><br><br>
-                <a href="https://github.com/myoualid/learn-osarch" target="_blank"><button class=button>Github Repo</button></a>
-                <br><br><br><br><br><br><br><br>
-            </nav>
         </div>
-        <br>
-
-        <br>
-        <div class="right_column">
-            {{{content}}}
-        </div>
+        <button class=button><a href="{{baseurl}}"> Main Menu </a></button><br><br>
+        <nav class="nav_pc">
+        </nav>
+        <nav class="nav_pc">
+            <ol>
+                {{#categories}}
+                <li><a class="lead" href="{{baseurl}}categories/{{id}}">{{name}}</a></li>
+                {{#is_active_category}}
+                <ul>
+                    {{#subcategories}}
+                    <li><a href="{{baseurl}}subcategories/{{id}}">{{name}}</a></li>
+                    {{/subcategories}}
+                </ul>
+                {{/is_active_category}}
+                <br>
+                {{/categories}}
+            </ol>
+            <hr>
+            <a href="https://wiki.osarch.org/index.php?title=AEC_Free_Software_directory" target="_blank"><button class=button> WIKI SOFTWARE DIRECTORY </button><br><br></a>
+            <a href="https://community.osarch.org/discussion/451/learn-osarch-org-open-source-educational-resources#latest" target="_blank"><button class=button>SUBMIT RESOURCES</button></a><br><br>
+            <a href="https://github.com/myoualid/learn-osarch" target="_blank"><button class=button>Github Repo</button></a>
+            <br><br><br><br><br><br><br><br>
+        </nav>
+    </div>
+    <br><br>
+    <div class="right_column">
+        {{{content}}}
     </div>
 </body>
 </html>

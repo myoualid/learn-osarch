@@ -15,7 +15,12 @@
             <h6 class='descriptive'>{{description}}</h6>
             <br>
             <br>
-            <a href="{{series_link}}" target="_blank"><button class="button bottom_append"> Find Series </button></a>
+            {{#is_a_guide}}
+                <a href="{{series_link}}" target="_blank"><button class="button bottom_append"> How-to Guides </button></a>
+            {{/is_a_guide}}
+            {{^is_a_guide}}
+                <a href="{{series_link}}" target="_blank"><button class="button bottom_append"> Video Series </button></a>
+            {{/is_a_guide}}
         </div>
     </div>
     {{/series}}

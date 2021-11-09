@@ -172,6 +172,8 @@ img {
 }
 
 .crop_circle_img {
+  width:7rem;
+  height:7rem;
   object-fit:cover;
   border-radius:50%;
 }
@@ -208,6 +210,7 @@ img {
 
 .card {
   padding:1rem;
+  width:20rem;
   margin-left: 15px;
   margin-right: 15px;
   margin-bottom: 15px;

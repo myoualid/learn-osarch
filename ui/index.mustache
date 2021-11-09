@@ -1,13 +1,14 @@
 <div class="post">
-    <h1> Choose a category below, and start learning from professionals worldwide.</h1>
-    <p>All rights belong to their respective owners. All Trademarks referred to are the property of their respective owners.</p>
+    <h1>Learn.Osarch is a library of How-tos and Video tutorials</h1>
+    <h3> Choose a category from below and start learning from leading industry professionals: </h3>
+    <br>    
 </div>
 <div class="row">
     {{#categories}}
     <div class="card">
         <div class="categories_width">
             <a href="{{baseurl}}categories/{{id}}"><img class="img_fit" src="{{baseurl}}assets/img/{{icon}}" alt="{{name}}"></a>
-            <h4><b><a href="{{baseurl}}categories/{{id}}">{{id}} - {{name}}</a></b></h4>
+            <h4><b><a href="{{baseurl}}categories/{{id}}">{{order_id}} - {{name}}</a></b></h4>
         </div>
     </div>
     {{/categories}}
